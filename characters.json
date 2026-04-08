@@ -1,0 +1,1986 @@
+[
+  {
+    "id": "sakura_bakushin_o_ballroom",
+    "gtId": "104103",
+    "name": "Sakura Bakushin O",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "sakura-bakushin-o"
+  },
+  {
+    "id": "north_flight_original",
+    "gtId": "108201",
+    "name": "North Flight",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "north-flight"
+  },
+  {
+    "id": "north_flight_ballroom",
+    "gtId": "108202",
+    "name": "North Flight",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "north-flight"
+  },
+  {
+    "id": "victoire_pisa_original",
+    "gtId": "114301",
+    "name": "Victoire Pisa",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "victoire-pisa"
+  },
+  {
+    "id": "loves_only_you_beyond_dreams",
+    "gtId": "113202",
+    "name": "Loves Only You",
+    "version": "Beyond Dreams",
+    "rarity": 3,
+    "slug": "loves-only-you"
+  },
+  {
+    "id": "almond_eye_original",
+    "gtId": "112901",
+    "name": "Almond Eye",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "almond-eye"
+  },
+  {
+    "id": "royce_and_royce_original",
+    "gtId": "110301",
+    "name": "Royce and Royce",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "royce-and-royce"
+  },
+  {
+    "id": "taiki_shuttle_valentine",
+    "gtId": "101003",
+    "name": "Taiki Shuttle",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "taiki-shuttle"
+  },
+  {
+    "id": "sounds_of_earth_valentine",
+    "gtId": "110202",
+    "name": "Sounds of Earth",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "sounds-of-earth"
+  },
+  {
+    "id": "kiseki_original",
+    "gtId": "113701",
+    "name": "Kiseki",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "kiseki"
+  },
+  {
+    "id": "bubble_gum_fellow_new_year",
+    "gtId": "112402",
+    "name": "Bubble Gum Fellow",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "bubble-gum-fellow"
+  },
+  {
+    "id": "ikuno_dictus_new_year",
+    "gtId": "106302",
+    "name": "Ikuno Dictus",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "ikuno-dictus"
+  },
+  {
+    "id": "sakura_laurel_new_year",
+    "gtId": "107602",
+    "name": "Sakura Laurel",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "sakura-laurel"
+  },
+  {
+    "id": "stay_gold_original",
+    "gtId": "113501",
+    "name": "Stay Gold",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "stay-gold"
+  },
+  {
+    "id": "oguri_cap_anime_collab",
+    "gtId": "100603",
+    "name": "Oguri Cap",
+    "version": "Anime Collab",
+    "rarity": 3,
+    "slug": "oguri-cap"
+  },
+  {
+    "id": "nakayama_festa_christmas",
+    "gtId": "104902",
+    "name": "Nakayama Festa",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "nakayama-festa"
+  },
+  {
+    "id": "dream_journey_christmas",
+    "gtId": "111902",
+    "name": "Dream Journey",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "dream-journey"
+  },
+  {
+    "id": "buena_vista_original",
+    "gtId": "111401",
+    "name": "Buena Vista",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "buena-vista"
+  },
+  {
+    "id": "wonder_acute_onsen",
+    "gtId": "110002",
+    "name": "Wonder Acute",
+    "version": "Onsen",
+    "rarity": 3,
+    "slug": "wonder-acute"
+  },
+  {
+    "id": "transcend_onsen",
+    "gtId": "108002",
+    "name": "Transcend",
+    "version": "Onsen",
+    "rarity": 3,
+    "slug": "transcend"
+  },
+  {
+    "id": "dantsu_flame_original",
+    "gtId": "109201",
+    "name": "Dantsu Flame",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "dantsu-flame"
+  },
+  {
+    "id": "tosen_jordan_halloween",
+    "gtId": "104803",
+    "name": "Tosen Jordan",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "tosen-jordan"
+  },
+  {
+    "id": "hishi_akebono_halloween",
+    "gtId": "102802",
+    "name": "Hishi Akebono",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "hishi-akebono"
+  },
+  {
+    "id": "marvelous_sunday_halloween",
+    "gtId": "105502",
+    "name": "Marvelous Sunday",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "marvelous-sunday"
+  },
+  {
+    "id": "believe_original",
+    "gtId": "109501",
+    "name": "Believe",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "believe"
+  },
+  {
+    "id": "espoir_city_original",
+    "gtId": "108101",
+    "name": "Espoir City",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "espoir-city"
+  },
+  {
+    "id": "ks_miracle_alt",
+    "gtId": "109302",
+    "name": "K.S. Miracle",
+    "version": "Alt Version",
+    "rarity": 3,
+    "slug": "ks-miracle"
+  },
+  {
+    "id": "hishi_miracle_alt",
+    "gtId": "110602",
+    "name": "Hishi Miracle",
+    "version": "Alt Version",
+    "rarity": 3,
+    "slug": "hishi-miracle"
+  },
+  {
+    "id": "still_in_love_original",
+    "gtId": "109701",
+    "name": "Still in Love",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "still-in-love"
+  },
+  {
+    "id": "vivlos_summer",
+    "gtId": "109102",
+    "name": "Vivlos",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "vivlos"
+  },
+  {
+    "id": "satono_crown_summer",
+    "gtId": "108802",
+    "name": "Satono Crown",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "satono-crown"
+  },
+  {
+    "id": "cheval_grand_summer",
+    "gtId": "108902",
+    "name": "Cheval Grand",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "cheval-grand"
+  },
+  {
+    "id": "rhein_kraft_alt",
+    "gtId": "110902",
+    "name": "Rhein Kraft",
+    "version": "Alt Version",
+    "rarity": 3,
+    "slug": "rhein-kraft"
+  },
+  {
+    "id": "fusaichi_pandora_original",
+    "gtId": "111301",
+    "name": "Fusaichi Pandora",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "fusaichi-pandora"
+  },
+  {
+    "id": "ines_fujin_deserted_island",
+    "gtId": "103103",
+    "name": "Ines Fujin",
+    "version": "Deserted Island",
+    "rarity": 3,
+    "slug": "ines-fujin"
+  },
+  {
+    "id": "gold_city_deserted_island",
+    "gtId": "104003",
+    "name": "Gold City",
+    "version": "Deserted Island",
+    "rarity": 3,
+    "slug": "gold-city"
+  },
+  {
+    "id": "chrono_genesis_original",
+    "gtId": "113301",
+    "name": "Chrono Genesis",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "chrono-genesis"
+  },
+  {
+    "id": "mejiro_ramonu_wedding",
+    "gtId": "108602",
+    "name": "Mejiro Ramonu",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "mejiro-ramonu"
+  },
+  {
+    "id": "cesario_wedding",
+    "gtId": "111002",
+    "name": "Cesario",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "cesario"
+  },
+  {
+    "id": "loves_only_you_original",
+    "gtId": "113201",
+    "name": "Loves Only You",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "loves-only-you"
+  },
+  {
+    "id": "verxina_original",
+    "gtId": "109001",
+    "name": "Verxina",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "verxina"
+  },
+  {
+    "id": "smart_falcon_parade",
+    "gtId": "104603",
+    "name": "Smart Falcon",
+    "version": "Parade",
+    "rarity": 3,
+    "slug": "smart-falcon"
+  },
+  {
+    "id": "copano_rickey_parade",
+    "gtId": "109802",
+    "name": "Copano Rickey",
+    "version": "Parade",
+    "rarity": 3,
+    "slug": "copano-rickey"
+  },
+  {
+    "id": "fenomeno_original",
+    "gtId": "112701",
+    "name": "Fenomeno",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "fenomeno"
+  },
+  {
+    "id": "sirius_symboli_twinkle_legends",
+    "gtId": "107002",
+    "name": "Sirius Symboli",
+    "version": "The Twinkle Legends",
+    "rarity": 3,
+    "slug": "sirius-symboli"
+  },
+  {
+    "id": "tanino_gimlet_ballroom",
+    "gtId": "108402",
+    "name": "Tanino Gimlet",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "tanino-gimlet"
+  },
+  {
+    "id": "tap_dance_city_ballroom",
+    "gtId": "110702",
+    "name": "Tap Dance City",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "tap-dance-city"
+  },
+  {
+    "id": "no_reason_original",
+    "gtId": "109601",
+    "name": "No Reason",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "no-reason"
+  },
+  {
+    "id": "gran_alegria_original",
+    "gtId": "113101",
+    "name": "Gran Alegria",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "gran-alegria"
+  },
+  {
+    "id": "orfevre_original",
+    "gtId": "111501",
+    "name": "Orfevre",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "orfevre"
+  },
+  {
+    "id": "tsurumaru_tsuyoshi_original",
+    "gtId": "107301",
+    "name": "Tsurumaru Tsuyoshi",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "tsurumaru-tsuyoshi"
+  },
+  {
+    "id": "yamanin_zephyr_valentine",
+    "gtId": "107802",
+    "name": "Yamanin Zephyr",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "yamanin-zephyr"
+  },
+  {
+    "id": "aston_machan_valentine",
+    "gtId": "108702",
+    "name": "Aston Machan",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "aston-machan"
+  },
+  {
+    "id": "furioso_original",
+    "gtId": "107901",
+    "name": "Furioso",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "furioso"
+  },
+  {
+    "id": "maruzensky_new_year",
+    "gtId": "100403",
+    "name": "Maruzensky",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "maruzensky"
+  },
+  {
+    "id": "mr_cb_new_year",
+    "gtId": "105702",
+    "name": "Mr. C.B.",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "mr-cb"
+  },
+  {
+    "id": "katsuragi_ace_new_year",
+    "gtId": "110402",
+    "name": "Katsuragi Ace",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "katsuragi-ace"
+  },
+  {
+    "id": "grass_wonder_new_year",
+    "gtId": "101103",
+    "name": "Grass Wonder",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "grass-wonder"
+  },
+  {
+    "id": "win_variation_original",
+    "gtId": "111701",
+    "name": "Win Variation",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "win-variation"
+  },
+  {
+    "id": "admire_vega_christmas",
+    "gtId": "103302",
+    "name": "Admire Vega",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "admire-vega"
+  },
+  {
+    "id": "narita_top_road_christmas",
+    "gtId": "107702",
+    "name": "Narita Top Road",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "narita-top-road"
+  },
+  {
+    "id": "air_messiah_original",
+    "gtId": "111101",
+    "name": "Air Messiah",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "air-messiah"
+  },
+  {
+    "id": "narita_taishin_mecha",
+    "gtId": "105003",
+    "name": "Narita Taishin",
+    "version": "Mecha",
+    "rarity": 3,
+    "slug": "narita-taishin"
+  },
+  {
+    "id": "biwa_hayahide_mecha",
+    "gtId": "102303",
+    "name": "Biwa Hayahide",
+    "version": "Mecha",
+    "rarity": 3,
+    "slug": "biwa-hayahide"
+  },
+  {
+    "id": "bubble_gum_fellow_original",
+    "gtId": "112401",
+    "name": "Bubble Gum Fellow",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "bubble-gum-fellow"
+  },
+  {
+    "id": "mayano_top_gun_halloween",
+    "gtId": "102403",
+    "name": "Mayano Top Gun",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "mayano-top-gun"
+  },
+  {
+    "id": "seeking_the_pearl_halloween",
+    "gtId": "104202",
+    "name": "Seeking the Pearl",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "seeking-the-pearl"
+  },
+  {
+    "id": "durandal_original",
+    "gtId": "112101",
+    "name": "Durandal",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "durandal"
+  },
+  {
+    "id": "cesario_original",
+    "gtId": "111001",
+    "name": "Cesario",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "cesario"
+  },
+  {
+    "id": "zenno_rob_roy_autumn",
+    "gtId": "104702",
+    "name": "Zenno Rob Roy",
+    "version": "Autumn",
+    "rarity": 3,
+    "slug": "zenno-rob-roy"
+  },
+  {
+    "id": "neo_universe_autumn",
+    "gtId": "110502",
+    "name": "Neo Universe",
+    "version": "Autumn",
+    "rarity": 3,
+    "slug": "neo-universe"
+  },
+  {
+    "id": "gentildonna_original",
+    "gtId": "111601",
+    "name": "Gentildonna",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "gentildonna"
+  },
+  {
+    "id": "eishin_flash_summer_trip",
+    "gtId": "103703",
+    "name": "Eishin Flash",
+    "version": "Summer Trip",
+    "rarity": 3,
+    "slug": "eishin-flash"
+  },
+  {
+    "id": "hokko_tarumae_summer_trip",
+    "gtId": "109902",
+    "name": "Hokko Tarumae",
+    "version": "Summer Trip",
+    "rarity": 3,
+    "slug": "hokko-tarumae"
+  },
+  {
+    "id": "calstone_light_o_original",
+    "gtId": "112001",
+    "name": "Calstone Light O",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "calstone-light-o"
+  },
+  {
+    "id": "rice_shower_food_festival",
+    "gtId": "103003",
+    "name": "Rice Shower",
+    "version": "Great Food Festival",
+    "rarity": 3,
+    "slug": "rice-shower"
+  },
+  {
+    "id": "dream_journey_original",
+    "gtId": "111901",
+    "name": "Dream Journey",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "dream-journey"
+  },
+  {
+    "id": "jungle_pocket_original",
+    "gtId": "109401",
+    "name": "Jungle Pocket",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "jungle-pocket"
+  },
+  {
+    "id": "sweep_tosho_wedding",
+    "gtId": "104402",
+    "name": "Sweep Tosho",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "sweep-tosho"
+  },
+  {
+    "id": "king_halo_wedding",
+    "gtId": "106103",
+    "name": "King Halo",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "king-halo"
+  },
+  {
+    "id": "agnes_tachyon_alt",
+    "gtId": "103203",
+    "name": "Agnes Tachyon",
+    "version": "Alt Version",
+    "rarity": 3,
+    "slug": "agnes-tachyon"
+  },
+  {
+    "id": "super_creek_warfare",
+    "gtId": "104503",
+    "name": "Super Creek",
+    "version": "Warfare",
+    "rarity": 3,
+    "slug": "super-creek"
+  },
+  {
+    "id": "yaeno_muteki_warfare",
+    "gtId": "107202",
+    "name": "Yaeno Muteki",
+    "version": "Warfare",
+    "rarity": 3,
+    "slug": "yaeno-muteki"
+  },
+  {
+    "id": "sounds_of_earth_original",
+    "gtId": "110201",
+    "name": "Sounds of Earth",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "sounds-of-earth"
+  },
+  {
+    "id": "winning_ticket_uaf",
+    "gtId": "103503",
+    "name": "Winning Ticket",
+    "version": "U.A.F.",
+    "rarity": 3,
+    "slug": "winning-ticket"
+  },
+  {
+    "id": "daitaku_helios_ballroom",
+    "gtId": "106502",
+    "name": "Daitaku Helios",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "daitaku-helios"
+  },
+  {
+    "id": "daiichi_ruby_ballroom",
+    "gtId": "108502",
+    "name": "Daiichi Ruby",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "daiichi-ruby"
+  },
+  {
+    "id": "rhein_kraft_original",
+    "gtId": "110901",
+    "name": "Rhein Kraft",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "rhein-kraft"
+  },
+  {
+    "id": "transcend_original",
+    "gtId": "108001",
+    "name": "Transcend",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "transcend"
+  },
+  {
+    "id": "ikuno_dictus_original",
+    "gtId": "106301",
+    "name": "Ikuno Dictus",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "ikuno-dictus"
+  },
+  {
+    "id": "duramente_original",
+    "gtId": "110801",
+    "name": "Duramente",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "duramente"
+  },
+  {
+    "id": "biko_pegasus_original",
+    "gtId": "105401",
+    "name": "Biko Pegasus",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "biko-pegasus"
+  },
+  {
+    "id": "manhattan_cafe_valentine",
+    "gtId": "102502",
+    "name": "Manhattan Cafe",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "manhattan-cafe"
+  },
+  {
+    "id": "yukino_bijin_valentine",
+    "gtId": "102902",
+    "name": "Yukino Bijin",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "yukino-bijin"
+  },
+  {
+    "id": "vivlos_original",
+    "gtId": "109101",
+    "name": "Vivlos",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "vivlos"
+  },
+  {
+    "id": "nice_nature_new_year",
+    "gtId": "106003",
+    "name": "Nice Nature",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "nice-nature"
+  },
+  {
+    "id": "kitasan_black_anime_collab",
+    "gtId": "106803",
+    "name": "Kitasan Black",
+    "version": "Anime Collab",
+    "rarity": 3,
+    "slug": "kitasan-black"
+  },
+  {
+    "id": "cheval_grand_original",
+    "gtId": "108901",
+    "name": "Cheval Grand",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "cheval-grand"
+  },
+  {
+    "id": "satono_crown_original",
+    "gtId": "108801",
+    "name": "Satono Crown",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "satono-crown"
+  },
+  {
+    "id": "mejiro_palmer_christmas",
+    "gtId": "106402",
+    "name": "Mejiro Palmer",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "mejiro-palmer"
+  },
+  {
+    "id": "mejiro_bright_christmas",
+    "gtId": "107402",
+    "name": "Mejiro Bright",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "mejiro-bright"
+  },
+  {
+    "id": "tap_dance_city_original",
+    "gtId": "110701",
+    "name": "Tap Dance City",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tap-dance-city"
+  },
+  {
+    "id": "tokai_teio_festival",
+    "gtId": "100303",
+    "name": "Tokai Teio",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "tokai-teio"
+  },
+  {
+    "id": "kawakami_princess_festival",
+    "gtId": "103902",
+    "name": "Kawakami Princess",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "kawakami-princess"
+  },
+  {
+    "id": "mejiro_ramonu_original",
+    "gtId": "108601",
+    "name": "Mejiro Ramonu",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-ramonu"
+  },
+  {
+    "id": "air_shakur_halloween",
+    "gtId": "103602",
+    "name": "Air Shakur",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "air-shakur"
+  },
+  {
+    "id": "symboli_kris_s_halloween",
+    "gtId": "108302",
+    "name": "Symboli Kris S",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "symboli-kris-s"
+  },
+  {
+    "id": "ks_miracle_original",
+    "gtId": "109301",
+    "name": "K.S. Miracle",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "ks-miracle"
+  },
+  {
+    "id": "satono_diamond_project_larc",
+    "gtId": "106703",
+    "name": "Satono Diamond",
+    "version": "Project L'Arc",
+    "rarity": 3,
+    "slug": "satono-diamond"
+  },
+  {
+    "id": "gold_ship_project_larc",
+    "gtId": "100703",
+    "name": "Gold Ship",
+    "version": "Project L'Arc",
+    "rarity": 3,
+    "slug": "gold-ship"
+  },
+  {
+    "id": "narita_top_road_original",
+    "gtId": "107701",
+    "name": "Narita Top Road",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "narita-top-road"
+  },
+  {
+    "id": "silence_suzuka_summer",
+    "gtId": "100202",
+    "name": "Silence Suzuka",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "silence-suzuka"
+  },
+  {
+    "id": "agnes_tachyon_summer",
+    "gtId": "103202",
+    "name": "Agnes Tachyon",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "agnes-tachyon"
+  },
+  {
+    "id": "sirius_symboli_original",
+    "gtId": "107001",
+    "name": "Sirius Symboli",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "sirius-symboli"
+  },
+  {
+    "id": "katsuragi_ace_original",
+    "gtId": "110401",
+    "name": "Katsuragi Ace",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "katsuragi-ace"
+  },
+  {
+    "id": "tosen_jordan_summer_trip",
+    "gtId": "104802",
+    "name": "Tosen Jordan",
+    "version": "Summer Trip",
+    "rarity": 3,
+    "slug": "tosen-jordan"
+  },
+  {
+    "id": "bamboo_memory_summer_trip",
+    "gtId": "105302",
+    "name": "Bamboo Memory",
+    "version": "Summer Trip",
+    "rarity": 3,
+    "slug": "bamboo-memory"
+  },
+  {
+    "id": "marvelous_sunday_original",
+    "gtId": "105501",
+    "name": "Marvelous Sunday",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "marvelous-sunday"
+  },
+  {
+    "id": "hishi_amazon_wedding",
+    "gtId": "101202",
+    "name": "Hishi Amazon",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "hishi-amazon"
+  },
+  {
+    "id": "nishino_flower_wedding",
+    "gtId": "105102",
+    "name": "Nishino Flower",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "nishino-flower"
+  },
+  {
+    "id": "tanino_gimlet_original",
+    "gtId": "108401",
+    "name": "Tanino Gimlet",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tanino-gimlet"
+  },
+  {
+    "id": "hishi_miracle_original",
+    "gtId": "110601",
+    "name": "Hishi Miracle",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "hishi-miracle"
+  },
+  {
+    "id": "sakura_bakushin_o_sports",
+    "gtId": "104102",
+    "name": "Sakura Bakushin O",
+    "version": "Sports Festival",
+    "rarity": 3,
+    "slug": "sakura-bakushin-o"
+  },
+  {
+    "id": "matikanetannhauser_sports",
+    "gtId": "106202",
+    "name": "Matikanetannhauser",
+    "version": "Sports Festival",
+    "rarity": 3,
+    "slug": "matikanetannhauser"
+  },
+  {
+    "id": "neo_universe_original",
+    "gtId": "110501",
+    "name": "Neo Universe",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "neo-universe"
+  },
+  {
+    "id": "sakura_laurel_original",
+    "gtId": "107601",
+    "name": "Sakura Laurel",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "sakura-laurel"
+  },
+  {
+    "id": "sakura_chiyono_o_ballroom",
+    "gtId": "106902",
+    "name": "Sakura Chiyono O",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "sakura-chiyono-o"
+  },
+  {
+    "id": "mejiro_ardan_ballroom",
+    "gtId": "107102",
+    "name": "Mejiro Ardan",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "mejiro-ardan"
+  },
+  {
+    "id": "symboli_kris_s_original",
+    "gtId": "108301",
+    "name": "Symboli Kris S",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "symboli-kris-s"
+  },
+  {
+    "id": "daiichi_ruby_original",
+    "gtId": "108501",
+    "name": "Daiichi Ruby",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "daiichi-ruby"
+  },
+  {
+    "id": "mr_cb_original",
+    "gtId": "105701",
+    "name": "Mr. C.B.",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mr-cb"
+  },
+  {
+    "id": "twin_turbo_original",
+    "gtId": "106601",
+    "name": "Twin Turbo",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "twin-turbo"
+  },
+  {
+    "id": "shinko_windy_original",
+    "gtId": "104301",
+    "name": "Shinko Windy",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "shinko-windy"
+  },
+  {
+    "id": "mejiro_ryan_valentine",
+    "gtId": "102702",
+    "name": "Mejiro Ryan",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "mejiro-ryan"
+  },
+  {
+    "id": "ines_fujin_valentine",
+    "gtId": "103102",
+    "name": "Ines Fujin",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "ines-fujin"
+  },
+  {
+    "id": "daitaku_helios_original",
+    "gtId": "106501",
+    "name": "Daitaku Helios",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "daitaku-helios"
+  },
+  {
+    "id": "hokko_tarumae_original",
+    "gtId": "109901",
+    "name": "Hokko Tarumae",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "hokko-tarumae"
+  },
+  {
+    "id": "satono_diamond_new_year",
+    "gtId": "106702",
+    "name": "Satono Diamond",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "satono-diamond"
+  },
+  {
+    "id": "kitasan_black_new_year",
+    "gtId": "106802",
+    "name": "Kitasan Black",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "kitasan-black"
+  },
+  {
+    "id": "narita_brian_blaze",
+    "gtId": "101602",
+    "name": "Narita Brian",
+    "version": "Blaze",
+    "rarity": 3,
+    "slug": "narita-brian"
+  },
+  {
+    "id": "zenno_rob_roy_original",
+    "gtId": "104701",
+    "name": "Zenno Rob Roy",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "zenno-rob-roy"
+  },
+  {
+    "id": "vodka_christmas",
+    "gtId": "100802",
+    "name": "Vodka",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "vodka"
+  },
+  {
+    "id": "daiwa_scarlet_christmas",
+    "gtId": "100902",
+    "name": "Daiwa Scarlet",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "daiwa-scarlet"
+  },
+  {
+    "id": "wonder_acute_original",
+    "gtId": "110001",
+    "name": "Wonder Acute",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "wonder-acute"
+  },
+  {
+    "id": "nakayama_festa_original",
+    "gtId": "104901",
+    "name": "Nakayama Festa",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "nakayama-festa"
+  },
+  {
+    "id": "tamamo_cross_festival",
+    "gtId": "102102",
+    "name": "Tamamo Cross",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "tamamo-cross"
+  },
+  {
+    "id": "inari_one_festival",
+    "gtId": "103402",
+    "name": "Inari One",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "inari-one"
+  },
+  {
+    "id": "yamanin_zephyr_original",
+    "gtId": "107801",
+    "name": "Yamanin Zephyr",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "yamanin-zephyr"
+  },
+  {
+    "id": "aston_machan_original",
+    "gtId": "108701",
+    "name": "Aston Machan",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "aston-machan"
+  },
+  {
+    "id": "agnes_digital_halloween",
+    "gtId": "101902",
+    "name": "Agnes Digital",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "agnes-digital"
+  },
+  {
+    "id": "meisho_doto_halloween",
+    "gtId": "105802",
+    "name": "Meisho Doto",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "meisho-doto"
+  },
+  {
+    "id": "seeking_the_pearl_original",
+    "gtId": "104201",
+    "name": "Seeking the Pearl",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "seeking-the-pearl"
+  },
+  {
+    "id": "yukino_bijin_original",
+    "gtId": "102901",
+    "name": "Yukino Bijin",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "yukino-bijin"
+  },
+  {
+    "id": "winning_ticket_steampunk",
+    "gtId": "103502",
+    "name": "Winning Ticket",
+    "version": "Steampunk",
+    "rarity": 3,
+    "slug": "winning-ticket"
+  },
+  {
+    "id": "narita_taishin_steampunk",
+    "gtId": "105002",
+    "name": "Narita Taishin",
+    "version": "Steampunk",
+    "rarity": 3,
+    "slug": "narita-taishin"
+  },
+  {
+    "id": "smart_falcon_grand_live",
+    "gtId": "104602",
+    "name": "Smart Falcon",
+    "version": "Grand Live",
+    "rarity": 3,
+    "slug": "smart-falcon"
+  },
+  {
+    "id": "copano_rickey_original",
+    "gtId": "109801",
+    "name": "Copano Rickey",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "copano-rickey"
+  },
+  {
+    "id": "bamboo_memory_original",
+    "gtId": "105301",
+    "name": "Bamboo Memory",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "bamboo-memory"
+  },
+  {
+    "id": "gold_ship_summer",
+    "gtId": "100702",
+    "name": "Gold Ship",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "gold-ship"
+  },
+  {
+    "id": "mejiro_mcqueen_summer",
+    "gtId": "101303",
+    "name": "Mejiro McQueen",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "mejiro-mcqueen"
+  },
+  {
+    "id": "special_week_commander",
+    "gtId": "100103",
+    "name": "Special Week",
+    "version": "Commander",
+    "rarity": 3,
+    "slug": "special-week"
+  },
+  {
+    "id": "air_shakur_original",
+    "gtId": "103601",
+    "name": "Air Shakur",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "air-shakur"
+  },
+  {
+    "id": "taiki_shuttle_camping",
+    "gtId": "101002",
+    "name": "Taiki Shuttle",
+    "version": "Camping",
+    "rarity": 3,
+    "slug": "taiki-shuttle"
+  },
+  {
+    "id": "mejiro_dober_camping",
+    "gtId": "105902",
+    "name": "Mejiro Dober",
+    "version": "Camping",
+    "rarity": 3,
+    "slug": "mejiro-dober"
+  },
+  {
+    "id": "sweep_tosho_original",
+    "gtId": "104401",
+    "name": "Sweep Tosho",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "sweep-tosho"
+  },
+  {
+    "id": "inari_one_original",
+    "gtId": "103401",
+    "name": "Inari One",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "inari-one"
+  },
+  {
+    "id": "fine_motion_wedding",
+    "gtId": "102202",
+    "name": "Fine Motion",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "fine-motion"
+  },
+  {
+    "id": "curren_chan_wedding",
+    "gtId": "103802",
+    "name": "Curren Chan",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "curren-chan"
+  },
+  {
+    "id": "mejiro_palmer_original",
+    "gtId": "106401",
+    "name": "Mejiro Palmer",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-palmer"
+  },
+  {
+    "id": "ines_fujin_original",
+    "gtId": "103101",
+    "name": "Ines Fujin",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "ines-fujin"
+  },
+  {
+    "id": "nice_nature_cheerleader",
+    "gtId": "106002",
+    "name": "Nice Nature",
+    "version": "Cheerleader",
+    "rarity": 3,
+    "slug": "nice-nature"
+  },
+  {
+    "id": "king_halo_cheerleader",
+    "gtId": "106102",
+    "name": "King Halo",
+    "version": "Cheerleader",
+    "rarity": 3,
+    "slug": "king-halo"
+  },
+  {
+    "id": "yaeno_muteki_original",
+    "gtId": "107201",
+    "name": "Yaeno Muteki",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "yaeno-muteki"
+  },
+  {
+    "id": "nishino_flower_original",
+    "gtId": "105101",
+    "name": "Nishino Flower",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "nishino-flower"
+  },
+  {
+    "id": "fuji_kiseki_ballroom",
+    "gtId": "100502",
+    "name": "Fuji Kiseki",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "fuji-kiseki"
+  },
+  {
+    "id": "seiun_sky_ballroom",
+    "gtId": "102002",
+    "name": "Seiun Sky",
+    "version": "Ballroom",
+    "rarity": 3,
+    "slug": "seiun-sky"
+  },
+  {
+    "id": "mejiro_bright_original",
+    "gtId": "107401",
+    "name": "Mejiro Bright",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-bright"
+  },
+  {
+    "id": "satono_diamond_original",
+    "gtId": "106701",
+    "name": "Satono Diamond",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "satono-diamond"
+  },
+  {
+    "id": "matikanetannhauser_original",
+    "gtId": "106201",
+    "name": "Matikanetannhauser",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "matikanetannhauser"
+  },
+  {
+    "id": "kitasan_black_original",
+    "gtId": "106801",
+    "name": "Kitasan Black",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "kitasan-black"
+  },
+  {
+    "id": "admire_vega_original",
+    "gtId": "103301",
+    "name": "Admire Vega",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "admire-vega"
+  },
+  {
+    "id": "mejiro_ardan_original",
+    "gtId": "107101",
+    "name": "Mejiro Ardan",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-ardan"
+  },
+  {
+    "id": "mihono_bourbon_valentine",
+    "gtId": "102602",
+    "name": "Mihono Bourbon",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "mihono-bourbon"
+  },
+  {
+    "id": "eishin_flash_valentine",
+    "gtId": "103702",
+    "name": "Eishin Flash",
+    "version": "Valentine",
+    "rarity": 3,
+    "slug": "eishin-flash"
+  },
+  {
+    "id": "sakura_chiyono_o_original",
+    "gtId": "106901",
+    "name": "Sakura Chiyono O",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "sakura-chiyono-o"
+  },
+  {
+    "id": "tm_opera_o_new_year",
+    "gtId": "101502",
+    "name": "TM Opera O",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "tm-opera-o"
+  },
+  {
+    "id": "haru_urara_new_year",
+    "gtId": "105202",
+    "name": "Haru Urara",
+    "version": "New Year",
+    "rarity": 3,
+    "slug": "haru-urara"
+  },
+  {
+    "id": "tamamo_cross_original",
+    "gtId": "102101",
+    "name": "Tamamo Cross",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tamamo-cross"
+  },
+  {
+    "id": "fine_motion_original",
+    "gtId": "102201",
+    "name": "Fine Motion",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "fine-motion"
+  },
+  {
+    "id": "oguri_cap_christmas",
+    "gtId": "100602",
+    "name": "Oguri Cap",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "oguri-cap"
+  },
+  {
+    "id": "biwa_hayahide_christmas",
+    "gtId": "102302",
+    "name": "Biwa Hayahide",
+    "version": "Christmas",
+    "rarity": 3,
+    "slug": "biwa-hayahide"
+  },
+  {
+    "id": "mejiro_dober_original",
+    "gtId": "105901",
+    "name": "Mejiro Dober",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-dober"
+  },
+  {
+    "id": "tosen_jordan_original",
+    "gtId": "104801",
+    "name": "Tosen Jordan",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tosen-jordan"
+  },
+  {
+    "id": "symboli_rudolf_festival",
+    "gtId": "101702",
+    "name": "Symboli Rudolf",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "symboli-rudolf"
+  },
+  {
+    "id": "gold_city_festival",
+    "gtId": "104002",
+    "name": "Gold City",
+    "version": "Festival",
+    "rarity": 3,
+    "slug": "gold-city"
+  },
+  {
+    "id": "manhattan_cafe_original",
+    "gtId": "102501",
+    "name": "Manhattan Cafe",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "manhattan-cafe"
+  },
+  {
+    "id": "kawakami_princess_original",
+    "gtId": "103901",
+    "name": "Kawakami Princess",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "kawakami-princess"
+  },
+  {
+    "id": "rice_shower_halloween",
+    "gtId": "103002",
+    "name": "Rice Shower",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "rice-shower"
+  },
+  {
+    "id": "super_creek_halloween",
+    "gtId": "104502",
+    "name": "Super Creek",
+    "version": "Halloween",
+    "rarity": 3,
+    "slug": "super-creek"
+  },
+  {
+    "id": "agnes_digital_original",
+    "gtId": "101901",
+    "name": "Agnes Digital",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "agnes-digital"
+  },
+  {
+    "id": "hishi_akebono_original",
+    "gtId": "102801",
+    "name": "Hishi Akebono",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "hishi-akebono"
+  },
+  {
+    "id": "matikanefukukitaru_armor",
+    "gtId": "105602",
+    "name": "Matikanefukukitaru",
+    "version": "Full Armor",
+    "rarity": 3,
+    "slug": "matikanefukukitaru"
+  },
+  {
+    "id": "eishin_flash_original",
+    "gtId": "103701",
+    "name": "Eishin Flash",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "eishin-flash"
+  },
+  {
+    "id": "meisho_doto_original",
+    "gtId": "105801",
+    "name": "Meisho Doto",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "meisho-doto"
+  },
+  {
+    "id": "special_week_summer",
+    "gtId": "100102",
+    "name": "Special Week",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "special-week"
+  },
+  {
+    "id": "maruzensky_summer",
+    "gtId": "100402",
+    "name": "Maruzensky",
+    "version": "Summer",
+    "rarity": 3,
+    "slug": "maruzensky"
+  },
+  {
+    "id": "gold_city_original",
+    "gtId": "104001",
+    "name": "Gold City",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "gold-city"
+  },
+  {
+    "id": "fuji_kiseki_original",
+    "gtId": "100501",
+    "name": "Fuji Kiseki",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "fuji-kiseki"
+  },
+  {
+    "id": "grass_wonder_fantasy",
+    "gtId": "101102",
+    "name": "Grass Wonder",
+    "version": "Fantasy",
+    "rarity": 3,
+    "slug": "grass-wonder"
+  },
+  {
+    "id": "el_condor_pasa_fantasy",
+    "gtId": "101402",
+    "name": "El Condor Pasa",
+    "version": "Fantasy",
+    "rarity": 3,
+    "slug": "el-condor-pasa"
+  },
+  {
+    "id": "hishi_amazon_original",
+    "gtId": "101201",
+    "name": "Hishi Amazon",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "hishi-amazon"
+  },
+  {
+    "id": "seiun_sky_original",
+    "gtId": "102001",
+    "name": "Seiun Sky",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "seiun-sky"
+  },
+  {
+    "id": "air_groove_wedding",
+    "gtId": "101802",
+    "name": "Air Groove",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "air-groove"
+  },
+  {
+    "id": "mayano_top_gun_wedding",
+    "gtId": "102402",
+    "name": "Mayano Top Gun",
+    "version": "Wedding",
+    "rarity": 3,
+    "slug": "mayano-top-gun"
+  },
+  {
+    "id": "narita_brian_original",
+    "gtId": "101601",
+    "name": "Narita Brian",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "narita-brian"
+  },
+  {
+    "id": "smart_falcon_original",
+    "gtId": "104601",
+    "name": "Smart Falcon",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "smart-falcon"
+  },
+  {
+    "id": "narita_taishin_original",
+    "gtId": "105001",
+    "name": "Narita Taishin",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "narita-taishin"
+  },
+  {
+    "id": "curren_chan_original",
+    "gtId": "103801",
+    "name": "Curren Chan",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "curren-chan"
+  },
+  {
+    "id": "tokai_teio_anime_collab",
+    "gtId": "100302",
+    "name": "Tokai Teio",
+    "version": "Anime Collab",
+    "rarity": 3,
+    "slug": "tokai-teio"
+  },
+  {
+    "id": "mejiro_mcqueen_anime_collab",
+    "gtId": "101302",
+    "name": "Mejiro McQueen",
+    "version": "Anime Collab",
+    "rarity": 3,
+    "slug": "mejiro-mcqueen"
+  },
+  {
+    "id": "biwa_hayahide_original",
+    "gtId": "102301",
+    "name": "Biwa Hayahide",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "biwa-hayahide"
+  },
+  {
+    "id": "mihono_bourbon_original",
+    "gtId": "102601",
+    "name": "Mihono Bourbon",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mihono-bourbon"
+  },
+  {
+    "id": "tm_opera_o_original",
+    "gtId": "101501",
+    "name": "TM Opera O",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tm-opera-o"
+  },
+  {
+    "id": "special_week_original",
+    "gtId": "100101",
+    "name": "Special Week",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "special-week"
+  },
+  {
+    "id": "silence_suzuka_original",
+    "gtId": "100201",
+    "name": "Silence Suzuka",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "silence-suzuka"
+  },
+  {
+    "id": "tokai_teio_original",
+    "gtId": "100301",
+    "name": "Tokai Teio",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "tokai-teio"
+  },
+  {
+    "id": "maruzensky_original",
+    "gtId": "100401",
+    "name": "Maruzensky",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "maruzensky"
+  },
+  {
+    "id": "oguri_cap_original",
+    "gtId": "100601",
+    "name": "Oguri Cap",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "oguri-cap"
+  },
+  {
+    "id": "gold_ship_original",
+    "gtId": "100701",
+    "name": "Gold Ship",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "gold-ship"
+  },
+  {
+    "id": "vodka_original",
+    "gtId": "100801",
+    "name": "Vodka",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "vodka"
+  },
+  {
+    "id": "daiwa_scarlet_original",
+    "gtId": "100901",
+    "name": "Daiwa Scarlet",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "daiwa-scarlet"
+  },
+  {
+    "id": "taiki_shuttle_original",
+    "gtId": "101001",
+    "name": "Taiki Shuttle",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "taiki-shuttle"
+  },
+  {
+    "id": "grass_wonder_original",
+    "gtId": "101101",
+    "name": "Grass Wonder",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "grass-wonder"
+  },
+  {
+    "id": "mejiro_mcqueen_original",
+    "gtId": "101301",
+    "name": "Mejiro McQueen",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "mejiro-mcqueen"
+  },
+  {
+    "id": "el_condor_pasa_original",
+    "gtId": "101401",
+    "name": "El Condor Pasa",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "el-condor-pasa"
+  },
+  {
+    "id": "symboli_rudolf_original",
+    "gtId": "101701",
+    "name": "Symboli Rudolf",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "symboli-rudolf"
+  },
+  {
+    "id": "air_groove_original",
+    "gtId": "101801",
+    "name": "Air Groove",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "air-groove"
+  },
+  {
+    "id": "mayano_top_gun_original",
+    "gtId": "102401",
+    "name": "Mayano Top Gun",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "mayano-top-gun"
+  },
+  {
+    "id": "mejiro_ryan_original",
+    "gtId": "102701",
+    "name": "Mejiro Ryan",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "mejiro-ryan"
+  },
+  {
+    "id": "rice_shower_original",
+    "gtId": "103001",
+    "name": "Rice Shower",
+    "version": "Original",
+    "rarity": 3,
+    "slug": "rice-shower"
+  },
+  {
+    "id": "agnes_tachyon_original",
+    "gtId": "103201",
+    "name": "Agnes Tachyon",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "agnes-tachyon"
+  },
+  {
+    "id": "winning_ticket_original",
+    "gtId": "103501",
+    "name": "Winning Ticket",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "winning-ticket"
+  },
+  {
+    "id": "sakura_bakushin_o_original",
+    "gtId": "104101",
+    "name": "Sakura Bakushin O",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "sakura-bakushin-o"
+  },
+  {
+    "id": "super_creek_original",
+    "gtId": "104501",
+    "name": "Super Creek",
+    "version": "Original",
+    "rarity": 2,
+    "slug": "super-creek"
+  },
+  {
+    "id": "haru_urara_original",
+    "gtId": "105201",
+    "name": "Haru Urara",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "haru-urara"
+  },
+  {
+    "id": "matikanefukukitaru_original",
+    "gtId": "105601",
+    "name": "Matikanefukukitaru",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "matikanefukukitaru"
+  },
+  {
+    "id": "nice_nature_original",
+    "gtId": "106001",
+    "name": "Nice Nature",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "nice-nature"
+  },
+  {
+    "id": "king_halo_original",
+    "gtId": "106101",
+    "name": "King Halo",
+    "version": "Original",
+    "rarity": 1,
+    "slug": "king-halo"
+  }
+]
