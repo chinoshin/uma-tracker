@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Musume Wishlist Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0a0a14;
+            --card-bg: #16162a;
+            --text-main: #f0f0ff;
+            --text-muted: #8888aa;
+            --accent-blue: #4facfe;
+            --accent-gold: #ffd700;
+            --accent-green: #38ef7d;
+            --accent-orange: #ff9f43;
+            --accent-red: #ff4757;
+            --border: rgba(255,255,255,0.08);
+            --shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1a3a 100%);
+            min-height: 100vh;
+            color: var(--text-main);
+        }
+
+        .header {
+            background: rgba(10, 10, 20, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+            .logo i {
+                font-size: 1.6rem;
+                color: var(--accent-gold);
+            }
+
+        /* Controls Bar */
+        .controls {
+            max-width: 1400px;
+            margin: 1.5rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box, .sort-box, .version-dropdown, .page-size-select {
+            padding: 0.7rem 1rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 1px solid var(--border);
+            flex: 1;
+            min-width: 150px;
+            font-size: 0.95rem;
+        }
+
+        .sort-box, .version-dropdown, .page-size-select {
+            cursor: pointer;
+            outline: none;
+            flex: 0 0 auto;
+            min-width: 140px;
+        }
+
+            .sort-box option, .version-dropdown option, .page-size-select option {
+                background: #16162a;
+                color: #fff;
+            }
+
+        /* Main Grid */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Styles */
+        .character-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .character-card:hover {
+                transform: translateY(-5px);
+                border-color: var(--accent-blue);
+            }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            background: linear-gradient(135deg, #2a2a4a, #1a1a3a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .char-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: bottom center;
+        }
+
+        .char-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.2s;
+        }
+
+            .char-link:hover {
+                transform: scale(1.05);
+            }
+
+        .status-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .badge-live {
+            background: var(--accent-green);
+            color: #fff;
+        }
+
+        .badge-upcoming {
+            background: var(--accent-blue);
+            color: #fff;
+        }
+
+        .card-content {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .char-name {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.3rem;
+        }
+
+        .version-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 12px;
+            margin-bottom: 0.6rem;
+            display: inline-block;
+            width: fit-content;
+        }
+
+        .info-row {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cd-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .cd-date {
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        .disclaimer {
+            text-align: center;
+            color: var(--accent-orange);
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            font-weight: 600;
+            background: rgba(255, 159, 67, 0.1);
+            border: 1px solid rgba(255, 159, 67, 0.3);
+            border-radius: 6px;
+            padding: 0.3rem;
+        }
+
+        .btn-track {
+            width: 100%;
+            padding: 0.6rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: auto;
+            transition: all 0.2s;
+            background: var(--accent-blue);
+            color: #0a0a14;
+        }
+
+            .btn-track.active {
+                background: var(--accent-red);
+                color: #fff;
+            }
+
+        /* Pagination */
+        .pagination-bar {
+            max-width: 1400px;
+            margin: 2rem auto 0;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .page-info {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .page-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .page-btn {
+            padding: 8px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+            .page-btn:hover:not(:disabled) {
+                background: var(--accent-blue);
+                color: #0a0a14;
+                border-color: var(--accent-blue);
+            }
+
+            .page-btn:disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+            }
+
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+            }
+
+            .search-box, .sort-box, .version-dropdown, .page-size-select {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo" onclick="location.reload()">
+                <i class="fas fa-trophy"></i> Uma Wishlist Tracker
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="page-btn" onclick="switchTab('timeline')" id="btn-timeline" style="background:var(--accent-blue);color:#0a0a14;">Timeline</button>
+                <button class="page-btn" onclick="switchTab('wishlist')" id="btn-wishlist">Wishlist (<span id="wl-count">0</span>)</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="controls">
+        <input type="text" class="search-box" id="search" placeholder="🔍 Search characters..." oninput="applyFilters()">
+        <select id="sort-select" class="sort-box" onchange="applyFilters()">
+            <option value="date-asc">📅 Date (Soonest)</option>
+            <option value="date-desc">📅 Date (Latest)</option>
+            <option value="name-asc">🔤 Name (A-Z)</option>
+            <option value="name-desc">🔤 Name (Z-A)</option>
+        </select>
+        <select id="version-select" class="version-dropdown" onchange="applyFilters()">
+            <option value="All">🌟 All Versions</option>
+        </select>
+        <select id="page-size-select" class="page-size-select" onchange="changePageSize()">
+            <option value="30">Show 30</option>
+            <option value="60">Show 60</option>
+            <option value="120">Show 120</option>
+            <option value="999">Show All</option>
+        </select>
+    </div>
+
+    <main class="container">
+        <div id="character-grid" class="character-grid"></div>
+        <div id="empty-state" style="text-align:center;padding:4rem;color:var(--text-muted);display:none;">
+            <i class="fas fa-ghost" style="font-size:3rem;margin-bottom:1rem;"></i>
+            <p>No characters found matching your filters.</p>
+        </div>
+    </main>
+
+    <div class="pagination-bar">
+        <div class="page-info" id="page-info">Loading...</div>
+        <div class="page-controls">
+            <button class="page-btn" id="prev-btn" onclick="changePage(-1)" disabled><i class="fas fa-chevron-left"></i> Prev</button>
+            <button class="page-btn" id="next-btn" onclick="changePage(1)">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // 1. CONFIGURATION
+        const VERSION_FILTERS = {
+            "New Year": { emoji: "🎍", color: "#ff6b6b", bg: "rgba(255, 107, 107, 0.2)" },
+            "Valentine": { emoji: "💝", color: "#ff85a2", bg: "rgba(255, 133, 162, 0.2)" },
+            "Christmas": { emoji: "🎄", color: "#2ecc71", bg: "rgba(46, 204, 113, 0.2)" },
+            "Halloween": { emoji: "🎃", color: "#ff9f43", bg: "rgba(255, 159, 67, 0.2)" },
+            "Summer": { emoji: "☀️", color: "#feca57", bg: "rgba(254, 202, 87, 0.2)" },
+            "Onsen": { emoji: "♨️", color: "#ff9ff3", bg: "rgba(255, 159, 243, 0.2)" },
+            "Camping": { emoji: "⛺", color: "#54a0ff", bg: "rgba(84, 160, 255, 0.2)" },
+            "Summer Trip": { emoji: "🏖️", color: "#48dbfb", bg: "rgba(72, 219, 251, 0.2)" },
+            "Wedding": { emoji: "💐", color: "#ffffff", bg: "rgba(255, 255, 255, 0.2)" },
+            "Ballroom": { emoji: "💃", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
+            "Festival": { emoji: "🎪", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
+            "Cheerleader": { emoji: "📣", color: "#fdcb6e", bg: "rgba(253, 203, 110, 0.2)" },
+            "Sports Festival": { emoji: "🏃", color: "#00b894", bg: "rgba(0, 184, 148, 0.2)" },
+            "Warfare": { emoji: "⚔️", color: "#636e72", bg: "rgba(99, 110, 114, 0.2)" },
+            "Steampunk": { emoji: "⚙️", color: "#dfe6e9", bg: "rgba(223, 230, 233, 0.2)" },
+            "Mecha": { emoji: "🤖", color: "#74b9ff", bg: "rgba(116, 185, 255, 0.2)" },
+            "Fantasy": { emoji: "🧚", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
+            "Full Armor": { emoji: "🛡️", color: "#b2bec3", bg: "rgba(178, 190, 195, 0.2)" },
+            "Commander": { emoji: "🎖️", color: "#6c5ce7", bg: "rgba(108, 92, 231, 0.2)" },
+            "Anime Collab": { emoji: "🎬", color: "#ff7675", bg: "rgba(255, 118, 117, 0.2)" },
+            "Project L'Arc": { emoji: "🌟", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
+            "The Twinkle Legends": { emoji: "✨", color: "#ffeaa7", bg: "rgba(255, 234, 167, 0.2)" },
+            "Grand Live": { emoji: "🎤", color: "#e84393", bg: "rgba(232, 67, 147, 0.2)" },
+            "Parade": { emoji: "🎉", color: "#fdcb6e", bg: "rgba(253, 203, 110, 0.2)" },
+            "Deserted Island": { emoji: "🏝️", color: "#00cec9", bg: "rgba(0, 206, 201, 0.2)" },
+            "Beyond Dreams": { emoji: "💫", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
+            "Great Food Festival": { emoji: "🍜", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
+            "Autumn": { emoji: "🍂", color: "#e17055", bg: "rgba(225, 112, 85, 0.2)" },
+            "Blaze": { emoji: "🔥", color: "#ff6b6b", bg: "rgba(255, 107, 107, 0.2)" },
+            "U.A.F.": { emoji: "🏆", color: "#ffd700", bg: "rgba(255, 215, 0, 0.2)" },
+            "Alt Version": { emoji: "🔄", color: "#74b9ff", bg: "rgba(116, 185, 255, 0.2)" },
+            "Original": { emoji: "⭐", color: "#dfe6e9", bg: "rgba(223, 230, 233, 0.2)" }
+        };
+
+        // 2. STATE
+        let allCharacters = [];
+        let allBanners = [];
+        let currentView = 'timeline'; // 'timeline' or 'wishlist'
+        let filteredList = [];
+        let currentPage = 1;
+        let pageSize = 30;
+        const WL_KEY = 'uma_wl_tracker';
+
+        // 3. HELPER FUNCTIONS
+        function getWL() { try { return JSON.parse(localStorage.getItem(WL_KEY)) || []; } catch { return []; } }
+        function saveWL(arr) { localStorage.setItem(WL_KEY, JSON.stringify(arr)); document.getElementById('wl-count').textContent = arr.length; }
+
+        // Recursive cleaner for JSON keys/values (Fixes trailing spaces)
+        function cleanData(data) {
+            if (typeof data === 'string') return data.trim();
+            if (Array.isArray(data)) return data.map(cleanData);
+            if (data !== null && typeof data === 'object') {
+                const clean = {};
+                for (let key in data) clean[key.trim()] = cleanData(data[key]);
+                return clean;
+            }
+            return data;
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const d = new Date(dateStr);
+            return `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
+        }
+
+        function formatCountdown(ms, prefix) {
+            if (ms <= 0) return 'Expired';
+            const d = Math.floor(ms / 86400000);
+            const h = Math.floor((ms % 86400000) / 3600000);
+            const m = Math.floor((ms % 3600000) / 60000);
+            return `${prefix}: ${d}d ${h}h ${m}m`;
+        }
+
+        // 4. DATA FETCHING & INIT
+        async function init() {
+            try {
+                // Cache busting to ensure fresh data
+                const t = Date.now();
+                const [charRes, timeRes] = await Promise.all([
+                    fetch(`characters.json?t=${t}`),
+                    fetch(`timeline.json?t=${t}`)
+                ]);
+
+                if (!charRes.ok || !timeRes.ok) throw new Error("Failed to load data files.");
+
+                allCharacters = cleanData(await charRes.json());
+                const rawTimeline = cleanData(await timeRes.json());
+
+                // Populate Version Dropdown
+                const verSelect = document.getElementById('version-select');
+                Object.keys(VERSION_FILTERS).sort().forEach(v => {
+                    const opt = document.createElement('option');
+                    opt.value = v;
+                    opt.textContent = `${VERSION_FILTERS[v].emoji} ${v}`;
+                    verSelect.appendChild(opt);
+                });
+
+                // Merge Timeline with Character Details
+                allBanners = rawTimeline.flatMap(entry =>
+                    entry.featured.map(feat => {
+                        const char = allCharacters.find(c => c.gtId === feat.gtId);
+                        return {
+                            id: feat.id || `${entry.bannerName}-${feat.gtId}`,
+                            gtId: feat.gtId,
+                            name: char?.name || entry.bannerName,
+                            version: char?.version || 'Original',
+                            slug: char?.slug || '',
+                            start: entry.start,
+                            end: entry.end,
+                            isOfficial: entry.isOfficial === true // Default to false if missing
+                        };
+                    })
+                );
+
+                // Initial Render
+                applyFilters();
+                updateWLCount();
+            } catch (err) {
+                console.error(err);
+                document.getElementById('character-grid').innerHTML = `<p style="color:var(--accent-red);text-align:center;padding:2rem;">Error: ${err.message}</p>`;
+            }
+        }
+
+        // 5. FILTERING & SORTING
+        function applyFilters() {
+            const search = document.getElementById('search').value.toLowerCase();
+            const sortMode = document.getElementById('sort-select').value;
+            const versionFilter = document.getElementById('version-select').value;
+            const wl = getWL();
+
+            let source = currentView === 'wishlist' ? allBanners.filter(b => wl.includes(b.id)) : allBanners;
+
+            filteredList = source.filter(b => {
+                const matchesSearch = b.name.toLowerCase().includes(search) || b.version.toLowerCase().includes(search);
+                const matchesVersion = versionFilter === 'All' || b.version === versionFilter;
+                return matchesSearch && matchesVersion;
+            });
+
+            filteredList.sort((a, b) => {
+                if (sortMode === 'date-asc') return new Date(a.start) - new Date(b.start);
+                if (sortMode === 'date-desc') return new Date(b.start) - new Date(a.start);
+                if (sortMode === 'name-asc') return a.name.localeCompare(b.name);
+                if (sortMode === 'name-desc') return b.name.localeCompare(a.name);
+                return 0;
+            });
+
+            currentPage = 1;
+            render();
+        }
+
+        function changePageSize() {
+            pageSize = parseInt(document.getElementById('page-size-select').value);
+            currentPage = 1;
+            render();
+        }
+
+        function changePage(delta) {
+            currentPage += delta;
+            render();
+        }
+
+        function switchTab(tab) {
+            currentView = tab;
+            document.getElementById('btn-timeline').style.background = tab === 'timeline' ? 'var(--accent-blue)' : 'var(--card-bg)';
+            document.getElementById('btn-timeline').style.color = tab === 'timeline' ? '#0a0a14' : 'var(--text-main)';
+            document.getElementById('btn-wishlist').style.background = tab === 'wishlist' ? 'var(--accent-blue)' : 'var(--card-bg)';
+            document.getElementById('btn-wishlist').style.color = tab === 'wishlist' ? '#0a0a14' : 'var(--text-main)';
+            applyFilters();
+        }
+
+        // 6. RENDERING
+        function render() {
+            const grid = document.getElementById('character-grid');
+            const empty = document.getElementById('empty-state');
+            const info = document.getElementById('page-info');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            grid.innerHTML = '';
+
+            if (filteredList.length === 0) {
+                empty.style.display = 'block';
+                info.textContent = 'No results';
+                prevBtn.disabled = true; nextBtn.disabled = true;
+                return;
+            }
+
+            empty.style.display = 'none';
+            const totalPages = Math.ceil(filteredList.length / pageSize);
+            const startIdx = (currentPage - 1) * pageSize;
+            const endIdx = Math.min(startIdx + pageSize, filteredList.length);
+            const pageData = filteredList.slice(startIdx, endIdx);
+
+            const now = new Date();
+
+            pageData.forEach(banner => {
+                const start = new Date(banner.start);
+                const end = new Date(banner.end);
+                let status = 'upcoming';
+                if (now >= start && now <= end) status = 'live';
+                else if (now > end) status = 'released';
+
+                const target = status === 'live' ? end : start;
+                const diff = target - now;
+                const cdText = status === 'live' ? formatCountdown(diff, 'Ends in') : formatCountdown(diff, 'Starts in');
+
+                const ver = VERSION_FILTERS[banner.version] || VERSION_FILTERS['Original'];
+                const imgUrl = `https://gametora.com/images/umamusume/characters/chara_stand_${banner.gtId.substring(0, 4)}_${banner.gtId}.png`;
+                const wl = getWL();
+                const isTracked = wl.includes(banner.id);
+
+                // Disclaimer logic
+                const disclaimerHTML = (banner.isOfficial === false && status !== 'released')
+                    ? `<div class="disclaimer"><i class="fas fa-exclamation-triangle"></i> Estimated Date</div>`
+                    : '';
+
+                const card = document.createElement('div');
+                card.className = 'character-card';
+                card.innerHTML = `
+                        <div class="card-image">
+                            <a href="https://gametora.com/umamusume/characters/${banner.gtId}-${banner.slug}" target="_blank" class="char-link">
+                                <img src="${imgUrl}" class="char-img" alt="${banner.name}" onerror="this.style.display='none'">
+                            </a>
+                            <span class="status-badge ${status === 'live' ? 'badge-live' : status === 'upcoming' ? 'badge-upcoming' : ''}">
+                                ${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}
+                            </span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="char-name">${banner.name}</h3>
+                            <span class="version-badge" style="color:${ver.color};background:${ver.bg};border:1px solid ${ver.color}40;">${ver.emoji} ${banner.version}</span>
+                            ${disclaimerHTML}
+                            <div class="info-row">
+                                <span class="cd-label"><i class="fas fa-calendar"></i> Release</span>
+                                <span class="cd-date">${formatDate(banner.start)}</span>
+                            </div>
+                            ${status === 'live' ?
+                        `<div class="info-row"><span class="cd-label"><i class="fas fa-clock"></i> Timer</span><span class="cd-date">${cdText}</span></div>` :
+                        `<div class="info-row"><span class="cd-label"><i class="fas fa-clock"></i> Timer</span><span class="cd-date">${cdText}</span></div>`
+                    }
+                            <button class="btn-track ${isTracked ? 'active' : ''}" onclick="toggleWL('${banner.id}', this)">
+                                <i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}
+                            </button>
+                        </div>
+                    `;
+                grid.appendChild(card);
+            });
+
+            // Update Pagination UI
+            info.textContent = `Showing ${startIdx + 1}-${endIdx} of ${filteredList.length}`;
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages || pageSize === 999;
+        }
+
+        function toggleWL(id, btn) {
+            let wl = getWL();
+            const idx = wl.indexOf(id);
+            if (idx > -1) wl.splice(idx, 1); else wl.push(id);
+            saveWL(wl);
+            btn.classList.toggle('active');
+            const isTracked = wl.includes(id);
+            btn.innerHTML = `<i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}`;
+            if (currentView === 'wishlist') applyFilters();
+        }
+
+        function updateWLCount() { document.getElementById('wl-count').textContent = getWL().length; }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
