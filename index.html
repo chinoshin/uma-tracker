@@ -322,6 +322,12 @@
                     width: auto;
                     min-width: 120px;
                 }
+                .character-grid.view-list .rerun-badge {
+                    top: 5px;
+                    left: 5px;
+                    font-size: 0.6rem;
+                    padding: 1px 4px;
+                }
 
         .character-card {
             background: var(--card-bg);
@@ -383,8 +389,10 @@
         }
 
         .badge-live {
-            background: var(--accent-green);
-            color: #fff;
+            background-color: #2ecc71;
+            color: #ffffff;
+            font-weight: 600;
+            text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2); /* Optional: adds a tiny bit more pop */
         }
 
         .badge-upcoming {
@@ -395,6 +403,25 @@
         .badge-released {
             background: var(--text-muted);
             color: #fff;
+        }
+        .card-image {
+            position: relative; /* This is crucial so the badge stays inside the image area */
+        }
+
+        .rerun-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #f39c12;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 900;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            pointer-events: none;
+            text-transform: uppercase;
         }
 
         .card-content {
@@ -742,6 +769,21 @@
                 grid-template-columns: 1fr;
             }
         }
+        .timer-overlay {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            border: 1px solid rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -854,22 +896,9 @@
             "Original": { emoji: "⭐", color: "#dfe6e9" }
         };
 
-        // ================= VIEW TOGGLE =================
-        function setView(view) {
-            currentView = view;
-            document.querySelectorAll('.character-grid').forEach(grid => {
-                grid.classList.toggle('view-list', view === 'list');
-            });
-            document.getElementById('view-thumbnails').classList.toggle('active', view === 'thumbnails');
-            document.getElementById('view-list').classList.toggle('active', view === 'list');
-        }
+        // ================= INITIALIZATION =================
+        window.onload = initData;
 
-        function toggleStatusTags() {
-            showStatusTags = document.getElementById('status-toggle').checked;
-            document.querySelectorAll('.status-tag').forEach(el => el.classList.toggle('hidden', !showStatusTags));
-        }
-
-        // ================= DATA LOADING =================
         async function initData() {
             try {
                 const t = Date.now();
@@ -886,32 +915,69 @@
                     }
                     return obj;
                 };
+
                 const characters = clean(await charRes.json());
                 const timeline = clean(await timeRes.json());
 
+                // 1. Move these to the very top of your data processing block
+                const appearanceTracker = {};
                 const timelineMap = {};
-                timeline.forEach(b => {
+
+                // 2. Then do the sorting
+                const sortedTimeline = [...timeline].sort((a, b) => new Date(a.start) - new Date(b.start));
+
+                // 3. Then do the loop
+                sortedTimeline.forEach(b => {
                     b.featured.forEach(f => {
-                        const id = f.id || `${b.bannerName}-${f.gtId}`;
-                        if (!timelineMap[id] || new Date(b.start) < new Date(timelineMap[id].start)) {
-                            timelineMap[id] = { start: b.start, end: b.end, isOfficial: b.isOfficial };
+                        const characterId = f.gtId;
+                        const instanceId = f.id || `${b.bannerName}-${f.gtId}`;
+
+                        // Check if seen before
+                        const isRerun = !!appearanceTracker[characterId];
+                        if (!isRerun) {
+                            appearanceTracker[characterId] = 1;
+                        } else {
+                            appearanceTracker[characterId]++;
                         }
+
+                        timelineMap[instanceId] = {
+                            ...f,
+                            start: b.start,
+                            end: b.end,
+                            isOfficial: b.isOfficial,
+                            isRerun: isRerun
+                        };
                     });
                 });
+
+                // 4. NOW you can use it or log it
+                window.timelineMap = timelineMap;
+                console.log(timelineMap);
 
                 allCharacters = characters.map(c => {
                     const tl = timelineMap[c.id];
                     const start = tl ? new Date(tl.start) : null;
                     const end = tl ? new Date(tl.end) : null;
                     let status = 'upcoming';
+
                     if (start && end) {
                         const now = new Date();
                         if (now >= start && now <= end) status = 'live';
                         else if (now > end) status = 'released';
                     }
-                    return { ...c, startDate: start, endDate: end, isOfficial: tl ? tl.isOfficial : false, status };
+
+                    // Correctly passing all properties to allCharacters
+                    return {
+                        ...c,
+                        startDate: start,
+                        endDate: end,
+                        isOfficial: tl ? tl.isOfficial : false,
+                        isRerun: tl ? tl.isRerun : false,
+                        status
+                    };
                 });
 
+                // Rest of your setup code...
                 const verSelect = document.getElementById('version-select');
                 Object.keys(VERSION_FILTERS).sort().forEach(v => {
                     const opt = document.createElement('option');
@@ -925,6 +991,8 @@
 
                 applyFilters();
                 updateWLCount();
+                setInterval(updateAllCountdowns, 1000);
+
             } catch (err) {
                 document.querySelector('.container').innerHTML = `<p style="color:var(--accent-red);text-align:center;padding:2rem;">Error: ${err.message}</p>`;
             }
@@ -942,7 +1010,6 @@
         }
 
         // ================= FILTERING & SORTING =================
-        // ================= FILTERING & SORTING =================
         function applyFilters() {
             const search = document.getElementById('search').value.toLowerCase();
             const sortMode = document.getElementById('sort-select').value;
@@ -957,10 +1024,7 @@
             filteredList = source.filter(item => {
                 const matchesSearch = item.name?.toLowerCase().includes(search) || item.version?.toLowerCase().includes(search);
                 const matchesVersion = versionFilter === 'All' || item.version === versionFilter;
-
-                // 🔹 TIMELINE TAB: Filter out released characters BEFORE pagination
                 const isReleased = currentTab === 'timeline' && item.status === 'released';
-
                 return matchesSearch && matchesVersion && !isReleased;
             });
 
@@ -968,7 +1032,7 @@
                 if (sortMode === 'date-asc') return (a.startDate || new Date('9999')) - (b.startDate || new Date('9999'));
                 if (sortMode === 'date-desc') return (b.startDate || new Date('0000')) - (a.startDate || new Date('0000'));
                 if (sortMode === 'name-asc') return (a.name || '').localeCompare(b.name || '');
-                if (sortMode === 'name-desc') return (b.name || '').localeCompare(a.name || '');
+                if (sortMode === 'name-desc') return (b.name || '').localeCompare(b.name || '');
                 return 0;
             });
 
@@ -1004,22 +1068,16 @@
             const startIdx = (currentPage - 1) * pageSize;
             const endIdx = Math.min(startIdx + pageSize, filteredList.length);
             const pageData = filteredList.slice(startIdx, endIdx);
-            const now = new Date();
 
             pageData.forEach(char => {
                 const status = char.status;
-
-                // 🔹 TIMELINE TAB: Hide released characters
-                if (currentTab === 'timeline' && status === 'released') {
-                    return; // Skip this character entirely
-                }
+                if (currentTab === 'timeline' && status === 'released') return;
 
                 const target = status === 'live' ? char.endDate : char.startDate;
-                const diff = target ? target - now : 0;
-                const cdText = status === 'live' ? formatCountdown(diff, 'Ends in') : formatCountdown(diff, 'Starts in');
                 const releaseDate = char.startDate ? `${String(char.startDate.getDate()).padStart(2, '0')}-${String(char.startDate.getMonth() + 1).padStart(2, '0')}-${char.startDate.getFullYear()}` : 'TBA';
-
                 const ver = VERSION_FILTERS[char.version] || VERSION_FILTERS['Original'];
+
+                // Original image fetching design preserved
                 const imgUrl = `https://gametora.com/images/umamusume/characters/chara_stand_${char.gtId.substring(0, 4)}_${char.gtId}.png`;
                 const isTracked = getWL().includes(char.id);
 
@@ -1027,52 +1085,53 @@
                 const tagHTML = currentTab === 'roster'
                     ? `<span class="status-tag ${tagClass} ${!showStatusTags ? 'hidden' : ''}">${status === 'released' ? '✓ Released' : '⏳ Upcoming'}</span>`
                     : '';
+                const rerunHTML = char.isRerun ? `<span class="rerun-badge">RERUN</span>` : '';
 
                 const card = document.createElement('div');
                 card.className = 'character-card';
                 card.innerHTML = `
-                            <div class="card-image">
-                                <a href="https://gametora.com/umamusume/characters/${char.gtId}-${char.slug}" target="_blank" class="char-link">
-                                    <img src="${imgUrl}" class="char-img" alt="${char.name}" onerror="this.style.display='none'">
-                                </a>
-                                ${currentTab === 'timeline' ? `<span class="status-badge badge-${status}">${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}</span>` : ''}
-                            </div>
-                            <div class="card-content">
-                                <div class="char-info">
-                                    <h3 class="char-name">${char.name}</h3>
-                                    <span class="version-badge" style="color:${ver.color}">${ver.emoji} ${char.version}</span>
-                                    ${tagHTML}
-                                    <div class="info-row">
-                                        <span class="cd-label"><i class="fas fa-calendar"></i> Release</span>
-                                        <span class="cd-date">${releaseDate}</span>
-                                    </div>
-                                    ${currentTab === 'timeline' && status !== 'released' ? `
-                                    <div class="info-row">
-                                        <span class="cd-label"><i class="fas fa-clock"></i> Timer</span>
-                                        <span class="cd-date">${cdText}</span>
-                                    </div>` : ''}
-                                </div>
-                                <button class="btn-track ${isTracked ? 'active' : ''}" onclick="toggleWL('${char.id}', this)">
-                                    <i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}
-                                </button>
-                            </div>
-                        `;
+                    <div class="card-image">
+                        <a href="https://gametora.com/umamusume/characters/${char.gtId}-${char.slug}" target="_blank" class="char-link">
+                            <img src="${imgUrl}" class="char-img" alt="${char.name}" onerror="this.style.display='none'">
+                        </a>
 
-                // 🔹 Append to correct section
+    ${ rerunHTML } 
+
+    ${(status !== 'released' && target !== 'TBA') ? `
+        <div class="timer-overlay">
+            <span class="countdown-timer" data-date="${target}" data-status="${status}">--:--:--</span>
+        </div>
+    ` : ''
+                }
+
+    ${ currentTab === 'timeline' ? `<span class="status-badge badge-${status}">${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}</span>` : '' }
+</div >
+                    <div class="card-content">
+                        <div class="char-info">
+                            <h3 class="char-name">${char.name} ${rerunHTML}</h3>
+                            <span class="version-badge" style="color:${ver.color}">${ver.emoji} ${char.version}</span>
+                            ${tagHTML}
+
+                            <div class="info-row">
+                                <span class="cd-label"><i class="fas fa-calendar"></i> Release</span>
+                                <span class="cd-date">${releaseDate}</span>
+                            </div>
+                        </div>
+                        <button class="btn-track ${isTracked ? 'active' : ''}" onclick="toggleWL('${char.id}', this)">
+                            <i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}
+                        </button>
+                    </div>
+
+                    `;
+
                 if (currentTab === 'timeline') {
-                    if (status === 'live') {
-                        liveGrid.appendChild(card);
-                    } else if (status === 'upcoming') {
-                        grid.appendChild(card);
-                    }
-                    // Released characters are skipped above, so they won't appear here
+                    if (status === 'live') liveGrid.appendChild(card);
+                    else if (status === 'upcoming') grid.appendChild(card);
                 } else {
-                    // For roster and wishlist, show all characters
                     grid.appendChild(card);
                 }
             });
 
-            // 🔹 Toggle Active Banners section visibility
             if (currentTab === 'timeline') {
                 document.getElementById('live-section').style.display = liveGrid.children.length ? 'block' : 'none';
             }
@@ -1081,7 +1140,6 @@
             prevBtn.disabled = currentPage === 1;
             nextBtn.disabled = currentPage === totalPages;
 
-            // Generate Page Numbers
             pageNumbersDiv.innerHTML = '';
             const pages = getPageNumbers(currentPage, totalPages);
             pages.forEach(page => {
@@ -1097,8 +1155,58 @@
                     pageNumbersDiv.appendChild(btn);
                 }
             });
+
+            // Trigger initial timer text update
+            updateAllCountdowns();
         }
 
+        // ================= TIMER LOGIC =================
+        function updateAllCountdowns() {
+            const now = new Date().getTime();
+
+            // 1. Check if the "Status Tags" toggle is ON or OFF
+            // Replace '.status-toggle-input' with the actual class/ID of your checkbox
+            const showTags = document.querySelector('.status-toggle-input')?.checked;
+
+            document.querySelectorAll('.countdown-timer').forEach(timer => {
+                const targetStr = timer.dataset.date;
+                const status = timer.dataset.status;
+                const overlay = timer.closest('.timer-overlay');
+
+                if (!overlay) return;
+
+                // 2. HIDE if the toggle is OFF, status is released, or date is TBA
+                if (!showTags || !targetStr || targetStr === "null" || targetStr === "TBA" || status === 'released') {
+                    overlay.style.display = 'none';
+                    return;
+                }
+
+                const target = new Date(targetStr).getTime();
+
+                if (isNaN(target)) {
+                    overlay.style.display = 'none';
+                    return;
+                }
+
+                const diff = target - now;
+
+                if (diff <= 0) {
+                    timer.textContent = status === 'live' ? "Expired" : "Live Now!";
+                    return;
+                }
+
+                // 3. SHOW if everything is valid and toggle is ON
+                overlay.style.display = 'block';
+
+                const d = Math.floor(diff / 86400000);
+                const h = Math.floor((diff % 86400000) / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+
+                const dayStr = d > 0 ? `${d}d ` : '';
+                timer.textContent = `${dayStr}${h}h ${m}m ${s}s`;
+            });
+        }
         function getPageNumbers(current, total) {
             if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
             if (current <= 4) return [1, 2, 3, 4, 5, '...', total];
@@ -1107,11 +1215,6 @@
         }
 
         // ================= HELPERS =================
-        function formatCountdown(ms, prefix) {
-            if (ms <= 0) return 'Expired';
-            const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000);
-            return `${prefix}: ${d}d ${h}h ${m}m`;
-        }
         function getWL() { try { return JSON.parse(localStorage.getItem(WL_KEY)) || []; } catch { return []; } }
         function saveWL(arr) { localStorage.setItem(WL_KEY, JSON.stringify(arr)); document.getElementById('wl-count').textContent = arr.length; }
         function updateWLCount() { document.getElementById('wl-count').textContent = getWL().length; }
@@ -1125,8 +1228,20 @@
             if (currentTab === 'wishlist') applyFilters();
         }
 
-        setInterval(() => { if (currentTab === 'timeline') render(); }, 60000);
-        window.addEventListener('DOMContentLoaded', initData);
+        function setView(view) {
+            currentView = view;
+            document.querySelectorAll('.character-grid').forEach(grid => {
+                grid.classList.toggle('view-list', view === 'list');
+            });
+            document.getElementById('view-thumbnails').classList.toggle('active', view === 'thumbnails');
+            document.getElementById('view-list').classList.toggle('active', view === 'list');
+        }
+
+        function toggleStatusTags() {
+            showStatusTags = document.getElementById('status-toggle').checked;
+            updateAllCountdowns()
+            document.querySelectorAll('.status-tag').forEach(el => el.classList.toggle('hidden', !showStatusTags));
+        }
     </script>
 </body>
 </html>
