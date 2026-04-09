@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uma Musume Wishlist Tracker</title>
+    <title>Uma Musume Wishlist Tracker - Global Server</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -37,7 +37,7 @@
         .header {
             background: rgba(10, 10, 20, 0.95);
             backdrop-filter: blur(12px);
-            padding: 1rem 2rem;
+            padding: 0.75rem 1rem;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -51,50 +51,101 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
+            gap: 8px;
+            font-size: 1.1rem;
             font-weight: 800;
             cursor: pointer;
         }
 
             .logo i {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 color: var(--accent-gold);
             }
 
-        /* Controls Bar */
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.08);
+            padding: 0.4rem;
+            border-radius: 12px;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1rem;
+            border: none;
+            background: transparent;
+            color: rgba(255,255,255,0.7);
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+        }
+
+            .tab-btn:hover {
+                background: rgba(255,255,255,0.1);
+            }
+
+            .tab-btn.active {
+                background: white;
+                color: #0a0a14;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+
+        .tab-badge {
+            background: #ff4757;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.65rem;
+            margin-left: 4px;
+        }
+
+        .hero {
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
         .controls {
             max-width: 1400px;
-            margin: 1.5rem auto;
-            padding: 0 2rem;
+            margin: 1rem auto;
+            padding: 0 1rem;
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
             align-items: center;
         }
 
         .search-box, .sort-box, .version-dropdown, .page-size-select {
-            padding: 0.7rem 1rem;
+            padding: 0.6rem 0.9rem;
             border-radius: 50px;
             background: rgba(255,255,255,0.05);
             color: #fff;
             border: 1px solid var(--border);
             flex: 1;
-            min-width: 150px;
-            font-size: 0.95rem;
+            min-width: 140px;
+            font-size: 0.9rem;
         }
 
         .sort-box, .version-dropdown, .page-size-select {
             cursor: pointer;
             outline: none;
             flex: 0 0 auto;
-            min-width: 140px;
+            min-width: 130px;
         }
 
             .sort-box option, .version-dropdown option, .page-size-select option {
@@ -102,20 +153,176 @@
                 color: #fff;
             }
 
-        /* Main Grid */
+        /* View Toggle Styles */
+        .view-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.05);
+            padding: 0.3rem 0.7rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+        }
+
+        .view-toggle-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .view-toggle-btn {
+            padding: 0.3rem 0.6rem;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+            .view-toggle-btn:hover {
+                background: rgba(255,255,255,0.1);
+                color: var(--text-main);
+            }
+
+            .view-toggle-btn.active {
+                background: var(--accent-blue);
+                color: #0a0a14;
+                border-color: var(--accent-blue);
+            }
+
+        /* Status Tag Toggle */
+        .status-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.05);
+            padding: 0.3rem 0.7rem;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+        }
+
+        .status-toggle-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .status-toggle-input {
+            display: none;
+        }
+
+        .status-toggle-slider {
+            position: relative;
+            width: 36px;
+            height: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            transition: background 0.3s;
+        }
+
+            .status-toggle-slider::after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                width: 16px;
+                height: 16px;
+                background: #fff;
+                border-radius: 50%;
+                transition: transform 0.3s;
+            }
+
+        .status-toggle-input:checked + .status-toggle-slider {
+            background: var(--accent-blue);
+        }
+
+            .status-toggle-input:checked + .status-toggle-slider::after {
+                transform: translateX(16px);
+            }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem 4rem;
+            padding: 0 1rem 2rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+            .tab-content.active {
+                display: block;
+            }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .character-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            width: 100%;
+            transition: all 0.3s ease;
         }
 
-        /* Card Styles */
+            /* List View Styles */
+            .character-grid.view-list {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+                .character-grid.view-list .character-card {
+                    flex-direction: row;
+                    height: 140px;
+                }
+
+                .character-grid.view-list .card-image {
+                    width: 140px;
+                    height: 100%;
+                    flex-shrink: 0;
+                }
+
+                .character-grid.view-list .card-content {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 1rem;
+                    flex: 1;
+                }
+
+                .character-grid.view-list .char-info {
+                    flex: 1;
+                }
+
+                .character-grid.view-list .char-name {
+                    font-size: 1.3rem;
+                    margin-bottom: 0.3rem;
+                }
+
+                .character-grid.view-list .countdown-box {
+                    margin-bottom: 0;
+                    min-width: 180px;
+                }
+
+                .character-grid.view-list .btn-track {
+                    width: auto;
+                    min-width: 120px;
+                }
+
         .character-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -124,18 +331,19 @@
             border: 1px solid var(--border);
             transition: all 0.3s;
             position: relative;
+            cursor: default;
             display: flex;
             flex-direction: column;
         }
 
             .character-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-4px);
                 border-color: var(--accent-blue);
             }
 
         .card-image {
             width: 100%;
-            height: 200px;
+            height: 180px;
             position: relative;
             background: linear-gradient(135deg, #2a2a4a, #1a1a3a);
             display: flex;
@@ -159,16 +367,16 @@
         }
 
             .char-link:hover {
-                transform: scale(1.05);
+                transform: scale(1.03);
             }
 
         .status-badge {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            padding: 4px 10px;
+            top: 8px;
+            right: 8px;
+            padding: 3px 8px;
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             z-index: 2;
@@ -184,26 +392,31 @@
             color: #fff;
         }
 
+        .badge-released {
+            background: var(--text-muted);
+            color: #fff;
+        }
+
         .card-content {
-            padding: 1rem;
+            padding: 0.9rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .char-name {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 800;
             color: var(--accent-blue);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
         .version-badge {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            padding: 3px 8px;
+            padding: 2px 7px;
             border-radius: 12px;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             display: inline-block;
             width: fit-content;
         }
@@ -211,15 +424,15 @@
         .info-row {
             background: rgba(0,0,0,0.2);
             border-radius: 8px;
-            padding: 0.5rem;
-            margin-bottom: 0.5rem;
+            padding: 0.4rem 0.6rem;
+            margin-bottom: 0.4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .cd-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-muted);
         }
 
@@ -227,25 +440,56 @@
             font-weight: bold;
             color: var(--accent-gold);
             font-family: monospace;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .disclaimer {
             text-align: center;
             color: var(--accent-orange);
-            font-size: 0.75rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.7rem;
+            margin-bottom: 0.4rem;
             font-style: italic;
             font-weight: 600;
             background: rgba(255, 159, 67, 0.1);
             border: 1px solid rgba(255, 159, 67, 0.3);
             border-radius: 6px;
-            padding: 0.3rem;
+            padding: 0.2rem;
         }
+
+        .status-tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: opacity 0.2s;
+        }
+
+            .status-tag.released {
+                background: rgba(136,136,170,0.2);
+                color: var(--text-muted);
+                border: 1px solid rgba(136,136,170,0.3);
+            }
+
+            .status-tag.upcoming {
+                background: rgba(79,172,254,0.15);
+                color: var(--accent-blue);
+                border: 1px solid rgba(79,172,254,0.3);
+            }
+
+            .status-tag.hidden {
+                opacity: 0;
+                pointer-events: none;
+                height: 0;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
 
         .btn-track {
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.5rem;
             border: none;
             border-radius: 8px;
             font-weight: 700;
@@ -254,18 +498,23 @@
             transition: all 0.2s;
             background: var(--accent-blue);
             color: #0a0a14;
+            font-size: 0.85rem;
         }
+
+            .btn-track:active {
+                transform: scale(0.98);
+            }
 
             .btn-track.active {
                 background: var(--accent-red);
                 color: #fff;
             }
 
-        /* Pagination */
+        /* Pagination Styles */
         .pagination-bar {
             max-width: 1400px;
-            margin: 2rem auto 0;
-            padding: 0 2rem;
+            margin: 1.5rem auto 0;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -275,28 +524,44 @@
 
         .page-info {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .page-controls {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .page-numbers {
+            display: flex;
+            gap: 4px;
+            align-items: center;
         }
 
         .page-btn {
-            padding: 8px 16px;
+            padding: 6px 10px;
             border-radius: 8px;
             border: 1px solid var(--border);
             background: var(--card-bg);
             color: var(--text-main);
             cursor: pointer;
+            font-size: 0.85rem;
             transition: all 0.2s;
+            min-width: 34px;
         }
 
-            .page-btn:hover:not(:disabled) {
+            .page-btn:hover:not(:disabled):not(.active) {
+                background: rgba(255,255,255,0.1);
+            }
+
+            .page-btn.active {
                 background: var(--accent-blue);
                 color: #0a0a14;
                 border-color: var(--accent-blue);
+                cursor: default;
             }
 
             .page-btn:disabled {
@@ -304,13 +569,177 @@
                 cursor: not-allowed;
             }
 
+        .page-ellipsis {
+            color: var(--text-muted);
+            padding: 0 4px;
+            font-weight: 600;
+        }
+
+        .site-footer {
+            background: rgba(10, 10, 20, 0.95);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 1rem;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .source-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .source-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+
+            .source-link:hover {
+                color: var(--accent-gold);
+            }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .header {
+                padding: 0.6rem 0.8rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.6rem;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            .tabs {
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+                .hero h1 {
+                    font-size: 1.5rem;
+                }
+
             .controls {
                 flex-direction: column;
+                padding: 0.6rem 1rem;
+                margin: 0.6rem auto;
+                gap: 0.6rem;
             }
 
             .search-box, .sort-box, .version-dropdown, .page-size-select {
                 width: 100%;
+            }
+
+            .view-toggle-container, .status-toggle-container {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .container {
+                padding: 0 0.8rem 1.5rem;
+            }
+
+            /* Thumbnail View - 2 columns on mobile */
+            .character-grid:not(.view-list) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+
+                .character-grid:not(.view-list) .card-image {
+                    height: 110px;
+                }
+
+                .character-grid:not(.view-list) .char-name {
+                    font-size: 0.85rem;
+                }
+
+                .character-grid:not(.view-list) .version-badge {
+                    font-size: 0.6rem;
+                    padding: 2px 5px;
+                }
+
+                .character-grid:not(.view-list) .info-row {
+                    padding: 0.3rem 0.4rem;
+                    font-size: 0.7rem;
+                }
+
+                .character-grid:not(.view-list) .btn-track {
+                    padding: 0.4rem;
+                    font-size: 0.75rem;
+                }
+
+            /* List View - Full width on mobile */
+            .character-grid.view-list .character-card {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .character-grid.view-list .card-image {
+                width: 100%;
+                height: 170px;
+            }
+
+            .character-grid.view-list .card-content {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.5rem;
+            }
+
+            .character-grid.view-list .countdown-box {
+                min-width: 100%;
+            }
+
+            .character-grid.view-list .btn-track {
+                width: 100%;
+            }
+
+            .pagination-bar {
+                flex-direction: column;
+                padding: 0.8rem;
+                margin: 1rem auto 0;
+                gap: 0.8rem;
+            }
+
+            .page-controls {
+                width: 100%;
+            }
+
+            .site-footer {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .character-grid:not(.view-list) {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -318,197 +747,228 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo" onclick="location.reload()">
-                <i class="fas fa-trophy"></i> Uma Wishlist Tracker
-            </div>
-            <div style="display: flex; gap: 10px;">
-                <button class="page-btn" onclick="switchTab('timeline')" id="btn-timeline" style="background:var(--accent-blue);color:#0a0a14;">Timeline</button>
-                <button class="page-btn" onclick="switchTab('wishlist')" id="btn-wishlist">Wishlist (<span id="wl-count">0</span>)</button>
-            </div>
+            <div class="logo" onclick="location.reload()"><i class="fas fa-trophy"></i> Uma Wishlist</div>
+            <nav class="tabs">
+                <button class="tab-btn active" data-tab="timeline">Timeline</button>
+                <button class="tab-btn" data-tab="roster">All Characters</button>
+                <button class="tab-btn" data-tab="wishlist">Wishlist <span class="tab-badge" id="wl-count">0</span></button>
+            </nav>
         </div>
     </header>
 
-    <div class="controls">
-        <input type="text" class="search-box" id="search" placeholder="🔍 Search characters..." oninput="applyFilters()">
-        <select id="sort-select" class="sort-box" onchange="applyFilters()">
-            <option value="date-asc">📅 Date (Soonest)</option>
-            <option value="date-desc">📅 Date (Latest)</option>
-            <option value="name-asc">🔤 Name (A-Z)</option>
-            <option value="name-desc">🔤 Name (Z-A)</option>
-        </select>
-        <select id="version-select" class="version-dropdown" onchange="applyFilters()">
-            <option value="All">🌟 All Versions</option>
-        </select>
-        <select id="page-size-select" class="page-size-select" onchange="changePageSize()">
-            <option value="30">Show 30</option>
-            <option value="60">Show 60</option>
-            <option value="120">Show 120</option>
-            <option value="999">Show All</option>
-        </select>
-    </div>
+    <section class="hero">
+        <h1>🐎 Banner Schedule</h1>
+        <div class="controls">
+            <input type="text" class="search-box" id="search" placeholder="🔍 Search..." oninput="applyFilters()">
+            <select id="sort-select" class="sort-box" onchange="applyFilters()">
+                <option value="date-asc">📅 Date (Soonest)</option>
+                <option value="date-desc">📅 Date (Latest)</option>
+                <option value="name-asc">🔤 Name (A-Z)</option>
+                <option value="name-desc">🔤 Name (Z-A)</option>
+            </select>
+            <select id="version-select" class="version-dropdown" onchange="applyFilters()">
+                <option value="All">🌟 All Versions</option>
+            </select>
+            <select id="page-size-select" class="page-size-select" onchange="changePageSize()">
+                <option value="30">Show 30</option>
+                <option value="60">Show 60</option>
+                <option value="120">Show 120</option>
+                <option value="999">Show All</option>
+            </select>
+            <div class="view-toggle-container">
+                <span class="view-toggle-label">View:</span>
+                <button class="view-toggle-btn active" id="view-thumbnails" onclick="setView('thumbnails')"><i class="fas fa-th-large"></i> Grid</button>
+                <button class="view-toggle-btn" id="view-list" onclick="setView('list')"><i class="fas fa-list"></i> List</button>
+            </div>
+            <label class="status-toggle-container" id="status-toggle-wrap" style="display:none;">
+                <input type="checkbox" id="status-toggle" class="status-toggle-input" checked onchange="toggleStatusTags()">
+                <span class="status-toggle-slider"></span>
+                <span class="status-toggle-label">Status Tags</span>
+            </label>
+        </div>
+    </section>
 
     <main class="container">
-        <div id="character-grid" class="character-grid"></div>
-        <div id="empty-state" style="text-align:center;padding:4rem;color:var(--text-muted);display:none;">
-            <i class="fas fa-ghost" style="font-size:3rem;margin-bottom:1rem;"></i>
-            <p>No characters found matching your filters.</p>
+        <div id="tab-timeline" class="tab-content active">
+            <div id="live-section" style="margin-bottom: 2rem; display: none;">
+                <h3 style="color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-satellite-dish"></i> Active Banners</h3>
+                <div class="character-grid" id="grid-live"></div>
+            </div>
+            <div id="upcoming-section">
+                <h3 style="color: var(--accent-gold); margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-calendar-alt"></i> Upcoming Schedule</h3>
+                <div class="character-grid" id="grid-timeline"></div>
+            </div>
+        </div>
+
+        <div id="tab-roster" class="tab-content">
+            <div class="character-grid" id="grid-roster"></div>
+        </div>
+
+        <div id="tab-wishlist" class="tab-content">
+            <div class="character-grid" id="grid-wl"></div>
         </div>
     </main>
 
     <div class="pagination-bar">
         <div class="page-info" id="page-info">Loading...</div>
-        <div class="page-controls">
-            <button class="page-btn" id="prev-btn" onclick="changePage(-1)" disabled><i class="fas fa-chevron-left"></i> Prev</button>
-            <button class="page-btn" id="next-btn" onclick="changePage(1)">Next <i class="fas fa-chevron-right"></i></button>
+        <div class="page-controls" id="pagination-controls">
+            <button class="page-btn" id="prev-btn" onclick="changePage(-1)" disabled><i class="fas fa-chevron-left"></i></button>
+            <div id="page-numbers" class="page-numbers"></div>
+            <button class="page-btn" id="next-btn" onclick="changePage(1)"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="source-links">
+                <a href="https://uma.moe/timeline" target="_blank" rel="noopener noreferrer" class="source-link"><i class="fas fa-clock"></i> uma.moe/timeline</a>
+                <a href="https://gametora.com/umamusume/characters" target="_blank" rel="noopener noreferrer" class="source-link"><i class="fas fa-image"></i> gametora.com/umamusume</a>
+            </div>
+            <p class="copyright">Data sourced from community trackers. All character images and assets are © Cygames.</p>
+        </div>
+    </footer>
+
     <script>
-        // 1. CONFIGURATION
+        // ================= STATE & CONFIG =================
+        let allCharacters = [], filteredList = [];
+        let currentPage = 1, pageSize = 30, currentTab = 'timeline';
+        let currentView = 'thumbnails';
+        let showStatusTags = true;
+        const WL_KEY = 'uma_wl_tracker';
         const VERSION_FILTERS = {
-            "New Year": { emoji: "🎍", color: "#ff6b6b", bg: "rgba(255, 107, 107, 0.2)" },
-            "Valentine": { emoji: "💝", color: "#ff85a2", bg: "rgba(255, 133, 162, 0.2)" },
-            "Christmas": { emoji: "🎄", color: "#2ecc71", bg: "rgba(46, 204, 113, 0.2)" },
-            "Halloween": { emoji: "🎃", color: "#ff9f43", bg: "rgba(255, 159, 67, 0.2)" },
-            "Summer": { emoji: "☀️", color: "#feca57", bg: "rgba(254, 202, 87, 0.2)" },
-            "Onsen": { emoji: "♨️", color: "#ff9ff3", bg: "rgba(255, 159, 243, 0.2)" },
-            "Camping": { emoji: "⛺", color: "#54a0ff", bg: "rgba(84, 160, 255, 0.2)" },
-            "Summer Trip": { emoji: "🏖️", color: "#48dbfb", bg: "rgba(72, 219, 251, 0.2)" },
-            "Wedding": { emoji: "💐", color: "#ffffff", bg: "rgba(255, 255, 255, 0.2)" },
-            "Ballroom": { emoji: "💃", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
-            "Festival": { emoji: "🎪", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
-            "Cheerleader": { emoji: "📣", color: "#fdcb6e", bg: "rgba(253, 203, 110, 0.2)" },
-            "Sports Festival": { emoji: "🏃", color: "#00b894", bg: "rgba(0, 184, 148, 0.2)" },
-            "Warfare": { emoji: "⚔️", color: "#636e72", bg: "rgba(99, 110, 114, 0.2)" },
-            "Steampunk": { emoji: "⚙️", color: "#dfe6e9", bg: "rgba(223, 230, 233, 0.2)" },
-            "Mecha": { emoji: "🤖", color: "#74b9ff", bg: "rgba(116, 185, 255, 0.2)" },
-            "Fantasy": { emoji: "🧚", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
-            "Full Armor": { emoji: "🛡️", color: "#b2bec3", bg: "rgba(178, 190, 195, 0.2)" },
-            "Commander": { emoji: "🎖️", color: "#6c5ce7", bg: "rgba(108, 92, 231, 0.2)" },
-            "Anime Collab": { emoji: "🎬", color: "#ff7675", bg: "rgba(255, 118, 117, 0.2)" },
-            "Project L'Arc": { emoji: "🌟", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
-            "The Twinkle Legends": { emoji: "✨", color: "#ffeaa7", bg: "rgba(255, 234, 167, 0.2)" },
-            "Grand Live": { emoji: "🎤", color: "#e84393", bg: "rgba(232, 67, 147, 0.2)" },
-            "Parade": { emoji: "🎉", color: "#fdcb6e", bg: "rgba(253, 203, 110, 0.2)" },
-            "Deserted Island": { emoji: "🏝️", color: "#00cec9", bg: "rgba(0, 206, 201, 0.2)" },
-            "Beyond Dreams": { emoji: "💫", color: "#a29bfe", bg: "rgba(162, 155, 254, 0.2)" },
-            "Great Food Festival": { emoji: "🍜", color: "#fd79a8", bg: "rgba(253, 121, 168, 0.2)" },
-            "Autumn": { emoji: "🍂", color: "#e17055", bg: "rgba(225, 112, 85, 0.2)" },
-            "Blaze": { emoji: "🔥", color: "#ff6b6b", bg: "rgba(255, 107, 107, 0.2)" },
-            "U.A.F.": { emoji: "🏆", color: "#ffd700", bg: "rgba(255, 215, 0, 0.2)" },
-            "Alt Version": { emoji: "🔄", color: "#74b9ff", bg: "rgba(116, 185, 255, 0.2)" },
-            "Original": { emoji: "⭐", color: "#dfe6e9", bg: "rgba(223, 230, 233, 0.2)" }
+            "New Year": { emoji: "🎍", color: "#ff6b6b" }, "Valentine": { emoji: "💝", color: "#ff85a2" },
+            "Christmas": { emoji: "🎄", color: "#2ecc71" }, "Halloween": { emoji: "🎃", color: "#ff9f43" },
+            "Summer": { emoji: "☀️", color: "#feca57" }, "Onsen": { emoji: "♨️", color: "#ff9ff3" },
+            "Camping": { emoji: "⛺", color: "#54a0ff" }, "Wedding": { emoji: "💐", color: "#ffffff" },
+            "Ballroom": { emoji: "💃", color: "#a29bfe" }, "Festival": { emoji: "🎪", color: "#fd79a8" },
+            "Cheerleader": { emoji: "📣", color: "#fdcb6e" }, "Sports Festival": { emoji: "🏃", color: "#00b894" },
+            "Warfare": { emoji: "⚔️", color: "#636e72" }, "Steampunk": { emoji: "⚙️", color: "#dfe6e9" },
+            "Mecha": { emoji: "🤖", color: "#74b9ff" }, "Fantasy": { emoji: "🧚", color: "#a29bfe" },
+            "Full Armor": { emoji: "🛡️", color: "#b2bec3" }, "Commander": { emoji: "🎖️", color: "#6c5ce7" },
+            "Anime Collab": { emoji: "🎬", color: "#ff7675" }, "Project L'Arc": { emoji: "🌟", color: "#fd79a8" },
+            "The Twinkle Legends": { emoji: "✨", color: "#ffeaa7" }, "Grand Live": { emoji: "🎤", color: "#e84393" },
+            "Parade": { emoji: "🎉", color: "#fdcb6e" }, "Deserted Island": { emoji: "🏝️", color: "#00cec9" },
+            "Beyond Dreams": { emoji: "💫", color: "#a29bfe" }, "Great Food Festival": { emoji: "🍜", color: "#fd79a8" },
+            "Autumn": { emoji: "🍂", color: "#e17055" }, "Blaze": { emoji: "🔥", color: "#ff6b6b" },
+            "U.A.F.": { emoji: "🏆", color: "#ffd700" }, "Alt Version": { emoji: "🔄", color: "#74b9ff" },
+            "Original": { emoji: "⭐", color: "#dfe6e9" }
         };
 
-        // 2. STATE
-        let allCharacters = [];
-        let allBanners = [];
-        let currentView = 'timeline'; // 'timeline' or 'wishlist'
-        let filteredList = [];
-        let currentPage = 1;
-        let pageSize = 30;
-        const WL_KEY = 'uma_wl_tracker';
-
-        // 3. HELPER FUNCTIONS
-        function getWL() { try { return JSON.parse(localStorage.getItem(WL_KEY)) || []; } catch { return []; } }
-        function saveWL(arr) { localStorage.setItem(WL_KEY, JSON.stringify(arr)); document.getElementById('wl-count').textContent = arr.length; }
-
-        // Recursive cleaner for JSON keys/values (Fixes trailing spaces)
-        function cleanData(data) {
-            if (typeof data === 'string') return data.trim();
-            if (Array.isArray(data)) return data.map(cleanData);
-            if (data !== null && typeof data === 'object') {
-                const clean = {};
-                for (let key in data) clean[key.trim()] = cleanData(data[key]);
-                return clean;
-            }
-            return data;
+        // ================= VIEW TOGGLE =================
+        function setView(view) {
+            currentView = view;
+            document.querySelectorAll('.character-grid').forEach(grid => {
+                grid.classList.toggle('view-list', view === 'list');
+            });
+            document.getElementById('view-thumbnails').classList.toggle('active', view === 'thumbnails');
+            document.getElementById('view-list').classList.toggle('active', view === 'list');
         }
 
-        function formatDate(dateStr) {
-            if (!dateStr) return '';
-            const d = new Date(dateStr);
-            return `${String(d.getDate()).padStart(2, '0')}-${String(d.getMonth() + 1).padStart(2, '0')}-${d.getFullYear()}`;
+        function toggleStatusTags() {
+            showStatusTags = document.getElementById('status-toggle').checked;
+            document.querySelectorAll('.status-tag').forEach(el => el.classList.toggle('hidden', !showStatusTags));
         }
 
-        function formatCountdown(ms, prefix) {
-            if (ms <= 0) return 'Expired';
-            const d = Math.floor(ms / 86400000);
-            const h = Math.floor((ms % 86400000) / 3600000);
-            const m = Math.floor((ms % 3600000) / 60000);
-            return `${prefix}: ${d}d ${h}h ${m}m`;
-        }
-
-        // 4. DATA FETCHING & INIT
-        async function init() {
+        // ================= DATA LOADING =================
+        async function initData() {
             try {
-                // Cache busting to ensure fresh data
                 const t = Date.now();
                 const [charRes, timeRes] = await Promise.all([
-                    fetch(`characters.json?t=${t}`),
-                    fetch(`timeline.json?t=${t}`)
+                    fetch(`characters.json?t=${t}`), fetch(`timeline.json?t=${t}`)
                 ]);
-
                 if (!charRes.ok || !timeRes.ok) throw new Error("Failed to load data files.");
 
-                allCharacters = cleanData(await charRes.json());
-                const rawTimeline = cleanData(await timeRes.json());
+                const clean = (obj) => {
+                    if (typeof obj === 'string') return obj.trim();
+                    if (Array.isArray(obj)) return obj.map(clean);
+                    if (obj && typeof obj === 'object') {
+                        const c = {}; for (let k in obj) c[k.trim()] = clean(obj[k]); return c;
+                    }
+                    return obj;
+                };
+                const characters = clean(await charRes.json());
+                const timeline = clean(await timeRes.json());
 
-                // Populate Version Dropdown
+                const timelineMap = {};
+                timeline.forEach(b => {
+                    b.featured.forEach(f => {
+                        const id = f.id || `${b.bannerName}-${f.gtId}`;
+                        if (!timelineMap[id] || new Date(b.start) < new Date(timelineMap[id].start)) {
+                            timelineMap[id] = { start: b.start, end: b.end, isOfficial: b.isOfficial };
+                        }
+                    });
+                });
+
+                allCharacters = characters.map(c => {
+                    const tl = timelineMap[c.id];
+                    const start = tl ? new Date(tl.start) : null;
+                    const end = tl ? new Date(tl.end) : null;
+                    let status = 'upcoming';
+                    if (start && end) {
+                        const now = new Date();
+                        if (now >= start && now <= end) status = 'live';
+                        else if (now > end) status = 'released';
+                    }
+                    return { ...c, startDate: start, endDate: end, isOfficial: tl ? tl.isOfficial : false, status };
+                });
+
                 const verSelect = document.getElementById('version-select');
                 Object.keys(VERSION_FILTERS).sort().forEach(v => {
                     const opt = document.createElement('option');
-                    opt.value = v;
-                    opt.textContent = `${VERSION_FILTERS[v].emoji} ${v}`;
+                    opt.value = v; opt.textContent = `${VERSION_FILTERS[v].emoji} ${v}`;
                     verSelect.appendChild(opt);
                 });
 
-                // Merge Timeline with Character Details
-                allBanners = rawTimeline.flatMap(entry =>
-                    entry.featured.map(feat => {
-                        const char = allCharacters.find(c => c.gtId === feat.gtId);
-                        return {
-                            id: feat.id || `${entry.bannerName}-${feat.gtId}`,
-                            gtId: feat.gtId,
-                            name: char?.name || entry.bannerName,
-                            version: char?.version || 'Original',
-                            slug: char?.slug || '',
-                            start: entry.start,
-                            end: entry.end,
-                            isOfficial: entry.isOfficial === true // Default to false if missing
-                        };
-                    })
-                );
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => switchTab(btn.dataset.tab));
+                });
 
-                // Initial Render
                 applyFilters();
                 updateWLCount();
             } catch (err) {
-                console.error(err);
-                document.getElementById('character-grid').innerHTML = `<p style="color:var(--accent-red);text-align:center;padding:2rem;">Error: ${err.message}</p>`;
+                document.querySelector('.container').innerHTML = `<p style="color:var(--accent-red);text-align:center;padding:2rem;">Error: ${err.message}</p>`;
             }
         }
 
-        // 5. FILTERING & SORTING
+        // ================= TAB & UI LOGIC =================
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === `tab-${tab}`));
+            document.getElementById('status-toggle-wrap').style.display = tab === 'roster' ? 'flex' : 'none';
+            document.getElementById('sort-select').value = tab === 'roster' ? 'name-asc' : 'date-asc';
+            currentPage = 1;
+            applyFilters();
+        }
+
+        // ================= FILTERING & SORTING =================
+        // ================= FILTERING & SORTING =================
         function applyFilters() {
             const search = document.getElementById('search').value.toLowerCase();
             const sortMode = document.getElementById('sort-select').value;
             const versionFilter = document.getElementById('version-select').value;
             const wl = getWL();
 
-            let source = currentView === 'wishlist' ? allBanners.filter(b => wl.includes(b.id)) : allBanners;
+            let source = [];
+            if (currentTab === 'timeline') source = allCharacters;
+            else if (currentTab === 'roster') source = [...allCharacters];
+            else source = allCharacters.filter(c => wl.includes(c.id));
 
-            filteredList = source.filter(b => {
-                const matchesSearch = b.name.toLowerCase().includes(search) || b.version.toLowerCase().includes(search);
-                const matchesVersion = versionFilter === 'All' || b.version === versionFilter;
-                return matchesSearch && matchesVersion;
+            filteredList = source.filter(item => {
+                const matchesSearch = item.name?.toLowerCase().includes(search) || item.version?.toLowerCase().includes(search);
+                const matchesVersion = versionFilter === 'All' || item.version === versionFilter;
+
+                // 🔹 TIMELINE TAB: Filter out released characters BEFORE pagination
+                const isReleased = currentTab === 'timeline' && item.status === 'released';
+
+                return matchesSearch && matchesVersion && !isReleased;
             });
 
             filteredList.sort((a, b) => {
-                if (sortMode === 'date-asc') return new Date(a.start) - new Date(b.start);
-                if (sortMode === 'date-desc') return new Date(b.start) - new Date(a.start);
-                if (sortMode === 'name-asc') return a.name.localeCompare(b.name);
-                if (sortMode === 'name-desc') return b.name.localeCompare(a.name);
+                if (sortMode === 'date-asc') return (a.startDate || new Date('9999')) - (b.startDate || new Date('9999'));
+                if (sortMode === 'date-desc') return (b.startDate || new Date('0000')) - (a.startDate || new Date('0000'));
+                if (sortMode === 'name-asc') return (a.name || '').localeCompare(b.name || '');
+                if (sortMode === 'name-desc') return (b.name || '').localeCompare(a.name || '');
                 return 0;
             });
 
@@ -516,124 +976,157 @@
             render();
         }
 
-        function changePageSize() {
-            pageSize = parseInt(document.getElementById('page-size-select').value);
-            currentPage = 1;
-            render();
-        }
+        function changePageSize() { pageSize = parseInt(document.getElementById('page-size-select').value); currentPage = 1; render(); }
+        function changePage(delta) { currentPage += delta; render(); }
+        function goToPage(page) { currentPage = page; render(); }
 
-        function changePage(delta) {
-            currentPage += delta;
-            render();
-        }
-
-        function switchTab(tab) {
-            currentView = tab;
-            document.getElementById('btn-timeline').style.background = tab === 'timeline' ? 'var(--accent-blue)' : 'var(--card-bg)';
-            document.getElementById('btn-timeline').style.color = tab === 'timeline' ? '#0a0a14' : 'var(--text-main)';
-            document.getElementById('btn-wishlist').style.background = tab === 'wishlist' ? 'var(--accent-blue)' : 'var(--card-bg)';
-            document.getElementById('btn-wishlist').style.color = tab === 'wishlist' ? '#0a0a14' : 'var(--text-main)';
-            applyFilters();
-        }
-
-        // 6. RENDERING
+        // ================= RENDERING =================
         function render() {
-            const grid = document.getElementById('character-grid');
-            const empty = document.getElementById('empty-state');
+            const gridIds = { timeline: 'grid-timeline', roster: 'grid-roster', wishlist: 'grid-wl' };
+            const liveGrid = document.getElementById('grid-live');
+            const grid = document.getElementById(gridIds[currentTab]);
             const info = document.getElementById('page-info');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
+            const pageNumbersDiv = document.getElementById('page-numbers');
 
             grid.innerHTML = '';
+            if (currentTab === 'timeline') liveGrid.innerHTML = '';
 
             if (filteredList.length === 0) {
-                empty.style.display = 'block';
                 info.textContent = 'No results';
-                prevBtn.disabled = true; nextBtn.disabled = true;
+                document.getElementById('pagination-controls').style.display = 'none';
                 return;
             }
 
-            empty.style.display = 'none';
+            document.getElementById('pagination-controls').style.display = 'flex';
             const totalPages = Math.ceil(filteredList.length / pageSize);
             const startIdx = (currentPage - 1) * pageSize;
             const endIdx = Math.min(startIdx + pageSize, filteredList.length);
             const pageData = filteredList.slice(startIdx, endIdx);
-
             const now = new Date();
 
-            pageData.forEach(banner => {
-                const start = new Date(banner.start);
-                const end = new Date(banner.end);
-                let status = 'upcoming';
-                if (now >= start && now <= end) status = 'live';
-                else if (now > end) status = 'released';
+            pageData.forEach(char => {
+                const status = char.status;
 
-                const target = status === 'live' ? end : start;
-                const diff = target - now;
+                // 🔹 TIMELINE TAB: Hide released characters
+                if (currentTab === 'timeline' && status === 'released') {
+                    return; // Skip this character entirely
+                }
+
+                const target = status === 'live' ? char.endDate : char.startDate;
+                const diff = target ? target - now : 0;
                 const cdText = status === 'live' ? formatCountdown(diff, 'Ends in') : formatCountdown(diff, 'Starts in');
+                const releaseDate = char.startDate ? `${String(char.startDate.getDate()).padStart(2, '0')}-${String(char.startDate.getMonth() + 1).padStart(2, '0')}-${char.startDate.getFullYear()}` : 'TBA';
 
-                const ver = VERSION_FILTERS[banner.version] || VERSION_FILTERS['Original'];
-                const imgUrl = `https://gametora.com/images/umamusume/characters/chara_stand_${banner.gtId.substring(0, 4)}_${banner.gtId}.png`;
-                const wl = getWL();
-                const isTracked = wl.includes(banner.id);
+                const ver = VERSION_FILTERS[char.version] || VERSION_FILTERS['Original'];
+                const imgUrl = `https://gametora.com/images/umamusume/characters/chara_stand_${char.gtId.substring(0, 4)}_${char.gtId}.png`;
+                const isTracked = getWL().includes(char.id);
 
-                // Disclaimer logic
-                const disclaimerHTML = (banner.isOfficial === false && status !== 'released')
-                    ? `<div class="disclaimer"><i class="fas fa-exclamation-triangle"></i> Estimated Date</div>`
+                const tagClass = status === 'released' ? 'released' : 'upcoming';
+                const tagHTML = currentTab === 'roster'
+                    ? `<span class="status-tag ${tagClass} ${!showStatusTags ? 'hidden' : ''}">${status === 'released' ? '✓ Released' : '⏳ Upcoming'}</span>`
                     : '';
 
                 const card = document.createElement('div');
                 card.className = 'character-card';
                 card.innerHTML = `
-                        <div class="card-image">
-                            <a href="https://gametora.com/umamusume/characters/${banner.gtId}-${banner.slug}" target="_blank" class="char-link">
-                                <img src="${imgUrl}" class="char-img" alt="${banner.name}" onerror="this.style.display='none'">
-                            </a>
-                            <span class="status-badge ${status === 'live' ? 'badge-live' : status === 'upcoming' ? 'badge-upcoming' : ''}">
-                                ${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}
-                            </span>
-                        </div>
-                        <div class="card-content">
-                            <h3 class="char-name">${banner.name}</h3>
-                            <span class="version-badge" style="color:${ver.color};background:${ver.bg};border:1px solid ${ver.color}40;">${ver.emoji} ${banner.version}</span>
-                            ${disclaimerHTML}
-                            <div class="info-row">
-                                <span class="cd-label"><i class="fas fa-calendar"></i> Release</span>
-                                <span class="cd-date">${formatDate(banner.start)}</span>
+                            <div class="card-image">
+                                <a href="https://gametora.com/umamusume/characters/${char.gtId}-${char.slug}" target="_blank" class="char-link">
+                                    <img src="${imgUrl}" class="char-img" alt="${char.name}" onerror="this.style.display='none'">
+                                </a>
+                                ${currentTab === 'timeline' ? `<span class="status-badge badge-${status}">${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}</span>` : ''}
                             </div>
-                            ${status === 'live' ?
-                        `<div class="info-row"><span class="cd-label"><i class="fas fa-clock"></i> Timer</span><span class="cd-date">${cdText}</span></div>` :
-                        `<div class="info-row"><span class="cd-label"><i class="fas fa-clock"></i> Timer</span><span class="cd-date">${cdText}</span></div>`
+                            <div class="card-content">
+                                <div class="char-info">
+                                    <h3 class="char-name">${char.name}</h3>
+                                    <span class="version-badge" style="color:${ver.color}">${ver.emoji} ${char.version}</span>
+                                    ${tagHTML}
+                                    <div class="info-row">
+                                        <span class="cd-label"><i class="fas fa-calendar"></i> Release</span>
+                                        <span class="cd-date">${releaseDate}</span>
+                                    </div>
+                                    ${currentTab === 'timeline' && status !== 'released' ? `
+                                    <div class="info-row">
+                                        <span class="cd-label"><i class="fas fa-clock"></i> Timer</span>
+                                        <span class="cd-date">${cdText}</span>
+                                    </div>` : ''}
+                                </div>
+                                <button class="btn-track ${isTracked ? 'active' : ''}" onclick="toggleWL('${char.id}', this)">
+                                    <i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}
+                                </button>
+                            </div>
+                        `;
+
+                // 🔹 Append to correct section
+                if (currentTab === 'timeline') {
+                    if (status === 'live') {
+                        liveGrid.appendChild(card);
+                    } else if (status === 'upcoming') {
+                        grid.appendChild(card);
                     }
-                            <button class="btn-track ${isTracked ? 'active' : ''}" onclick="toggleWL('${banner.id}', this)">
-                                <i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}
-                            </button>
-                        </div>
-                    `;
-                grid.appendChild(card);
+                    // Released characters are skipped above, so they won't appear here
+                } else {
+                    // For roster and wishlist, show all characters
+                    grid.appendChild(card);
+                }
             });
 
-            // Update Pagination UI
+            // 🔹 Toggle Active Banners section visibility
+            if (currentTab === 'timeline') {
+                document.getElementById('live-section').style.display = liveGrid.children.length ? 'block' : 'none';
+            }
+
             info.textContent = `Showing ${startIdx + 1}-${endIdx} of ${filteredList.length}`;
             prevBtn.disabled = currentPage === 1;
-            nextBtn.disabled = currentPage === totalPages || pageSize === 999;
+            nextBtn.disabled = currentPage === totalPages;
+
+            // Generate Page Numbers
+            pageNumbersDiv.innerHTML = '';
+            const pages = getPageNumbers(currentPage, totalPages);
+            pages.forEach(page => {
+                if (page === '...') {
+                    const span = document.createElement('span');
+                    span.className = 'page-ellipsis'; span.textContent = '…';
+                    pageNumbersDiv.appendChild(span);
+                } else {
+                    const btn = document.createElement('button');
+                    btn.className = `page-btn ${page === currentPage ? 'active' : ''}`;
+                    btn.textContent = page;
+                    btn.onclick = () => goToPage(page);
+                    pageNumbersDiv.appendChild(btn);
+                }
+            });
         }
 
+        function getPageNumbers(current, total) {
+            if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+            if (current <= 4) return [1, 2, 3, 4, 5, '...', total];
+            if (current >= total - 3) return [1, '...', total - 4, total - 3, total - 2, total - 1, total];
+            return [1, '...', current - 1, current, current + 1, '...', total];
+        }
+
+        // ================= HELPERS =================
+        function formatCountdown(ms, prefix) {
+            if (ms <= 0) return 'Expired';
+            const d = Math.floor(ms / 86400000), h = Math.floor((ms % 86400000) / 3600000), m = Math.floor((ms % 3600000) / 60000);
+            return `${prefix}: ${d}d ${h}h ${m}m`;
+        }
+        function getWL() { try { return JSON.parse(localStorage.getItem(WL_KEY)) || []; } catch { return []; } }
+        function saveWL(arr) { localStorage.setItem(WL_KEY, JSON.stringify(arr)); document.getElementById('wl-count').textContent = arr.length; }
+        function updateWLCount() { document.getElementById('wl-count').textContent = getWL().length; }
         function toggleWL(id, btn) {
             let wl = getWL();
             const idx = wl.indexOf(id);
             if (idx > -1) wl.splice(idx, 1); else wl.push(id);
             saveWL(wl);
             btn.classList.toggle('active');
-            const isTracked = wl.includes(id);
-            btn.innerHTML = `<i class="${isTracked ? 'fas' : 'far'} fa-heart"></i> ${isTracked ? 'Tracked' : 'Track'}`;
-            if (currentView === 'wishlist') applyFilters();
+            btn.innerHTML = `<i class="${wl.includes(id) ? 'fas' : 'far'} fa-heart"></i> ${wl.includes(id) ? 'Tracked' : 'Track'}`;
+            if (currentTab === 'wishlist') applyFilters();
         }
 
-        function updateWLCount() { document.getElementById('wl-count').textContent = getWL().length; }
-
-        // Initialize on load
-        window.addEventListener('DOMContentLoaded', init);
+        setInterval(() => { if (currentTab === 'timeline') render(); }, 60000);
+        window.addEventListener('DOMContentLoaded', initData);
     </script>
 </body>
 </html>

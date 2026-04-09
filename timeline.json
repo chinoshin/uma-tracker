@@ -1,5 +1,276 @@
 [
   {
+    "bannerName": "Transcend",
+    "type": "character",
+    "start": "2027-07-17T00:00:00Z",
+    "end": "2027-07-25T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "transcend_original",
+        "gtId": "108001"
+      }
+    ]
+  },
+  {
+    "bannerName": "Ikuno Dictus & Duramente",
+    "type": "character",
+    "start": "2027-07-06T00:00:00Z",
+    "end": "2027-07-31T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "ikuno_dictus_original",
+        "gtId": "106301"
+      },
+      {
+        "id": "duramente_original",
+        "gtId": "110801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Biko Pegasus",
+    "type": "character",
+    "start": "2027-06-29T00:00:00Z",
+    "end": "2027-07-08T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "biko_pegasus_original",
+        "gtId": "105401"
+      }
+    ]
+  },
+  {
+    "bannerName": "Manhattan Cafe (Valentine) & Yukino Bijin (Valentine)",
+    "type": "character",
+    "start": "2027-06-20T00:00:00Z",
+    "end": "2027-07-03T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "manhattan_cafe_valentine",
+        "gtId": "102502"
+      },
+      {
+        "id": "yukino_bijin_valentine",
+        "gtId": "102902"
+      }
+    ]
+  },
+  {
+    "bannerName": "Vivlos",
+    "type": "character",
+    "start": "2027-06-12T00:00:00Z",
+    "end": "2027-06-23T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "vivlos_original",
+        "gtId": "109101"
+      }
+    ]
+  },
+  {
+    "bannerName": "Nice Nature (New Year)",
+    "type": "character",
+    "start": "2027-06-05T00:00:00Z",
+    "end": "2027-06-14T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "nice_nature_new_year",
+        "gtId": "106003"
+      }
+    ]
+  },
+  {
+    "bannerName": "Kitasan Black (Anime Collab)",
+    "type": "character",
+    "start": "2027-05-28T00:00:00Z",
+    "end": "2027-06-08T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "kitasan_black_anime_collab",
+        "gtId": "106803"
+      }
+    ]
+  },
+  {
+    "bannerName": "Cheval Grand",
+    "type": "character",
+    "start": "2027-05-23T00:00:00Z",
+    "end": "2027-05-30T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "cheval_grand_original",
+        "gtId": "108901"
+      }
+    ]
+  },
+  {
+    "bannerName": "Satono Crown",
+    "type": "character",
+    "start": "2027-05-17T00:00:00Z",
+    "end": "2027-05-25T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "satono_crown_original",
+        "gtId": "108801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mejiro Palmer (Christmas) & Mejiro Bright (Christmas)",
+    "type": "character",
+    "start": "2027-05-10T00:00:00Z",
+    "end": "2027-05-20T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "mejiro_palmer_christmas",
+        "gtId": "106402"
+      },
+      {
+        "id": "mejiro_bright_christmas",
+        "gtId": "107402"
+      }
+    ]
+  },
+  {
+    "bannerName": "Tap Dance City",
+    "type": "character",
+    "start": "2027-05-03T00:00:00Z",
+    "end": "2027-05-12T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "tap_dance_city_original",
+        "gtId": "110701"
+      }
+    ]
+  },
+  {
+    "bannerName": "Tokai Teio (Festival) & Kawakami Princess (Festival)",
+    "type": "character",
+    "start": "2027-04-20T00:00:00Z",
+    "end": "2027-04-29T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "tokai_teio_festival",
+        "gtId": "100303"
+      },
+      {
+        "id": "kawakami_princess_festival",
+        "gtId": "103902"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mejiro Ramonu",
+    "type": "character",
+    "start": "2027-04-12T00:00:00Z",
+    "end": "2027-04-22T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "mejiro_ramonu_original",
+        "gtId": "108601"
+      }
+    ]
+  },
+  {
+    "bannerName": "Air Shakur (Halloween) & Symboli Kris S (Halloween)",
+    "type": "character",
+    "start": "2027-03-30T00:00:00Z",
+    "end": "2027-04-09T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "air_shakur_halloween",
+        "gtId": "103602"
+      },
+      {
+        "id": "symboli_kris_s_halloween",
+        "gtId": "108302"
+      }
+    ]
+  },
+  {
+    "bannerName": "K.S. Miracle",
+    "type": "character",
+    "start": "2027-03-24T00:00:00Z",
+    "end": "2027-04-02T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "ks_miracle_original",
+        "gtId": "109301"
+      }
+    ]
+  },
+  {
+    "bannerName": "Satono Diamond (Project L'Arc)",
+    "type": "character",
+    "start": "2027-03-18T00:00:00Z",
+    "end": "2027-03-27T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "satono_diamond_project_larc",
+        "gtId": "106703"
+      }
+    ]
+  },
+  {
+    "bannerName": "Gold Ship (Project L'Arc)",
+    "type": "character",
+    "start": "2027-03-11T00:00:00Z",
+    "end": "2027-03-22T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "gold_ship_project_larc",
+        "gtId": "100703"
+      }
+    ]
+  },
+  {
+    "bannerName": "Narita Top Road",
+    "type": "character",
+    "start": "2027-03-07T00:00:00Z",
+    "end": "2027-03-25T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "narita_top_road_original",
+        "gtId": "107701"
+      }
+    ]
+  },
+  {
+    "bannerName": "Copano Rickey & Hokko Tarumae",
+    "type": "character",
+    "start": "2027-02-28T00:00:00Z",
+    "end": "2027-03-10T23:59:59Z",
+    "isOfficial": false,
+    "featured": [
+      {
+        "id": "copano_rickey_original",
+        "gtId": "109801"
+      },
+      {
+        "id": "hokko_tarumae_original",
+        "gtId": "109901"
+      }
+    ]
+  },
+  {
     "bannerName": "Agnes Tachyon (Summer) & Silence Suzuka (Summer)",
     "type": "character",
     "start": "2027-02-19T00:00:00Z",
@@ -219,7 +490,7 @@
     ]
   },
   {
-    "bannerName": "Twin Turbo & Mr. C.B.",
+    "bannerName": "Twin Turbo",
     "type": "character",
     "start": "2026-11-08T00:00:00Z",
     "end": "2026-12-02T23:59:59Z",
@@ -228,10 +499,6 @@
       {
         "id": "twin_turbo_original",
         "gtId": "106601"
-      },
-      {
-        "id": "mr_cb_original",
-        "gtId": "105701"
       }
     ]
   },
@@ -541,6 +808,115 @@
     ]
   },
   {
+    "bannerName": "Special Week & Silence Suzuka & Tokai Teio & Maruzensky & Oguri Cap & Gold Ship & Vodka & Daiwa Scarlet & Taiki Shuttle & Grass Wonder & Mejiro McQueen & El Condor Pasa & Symboli Rudolf & Air Groove & Mayano Top Gun & Mejiro Ryan & Rice Shower & Agnes Tachyon & Winning Ticket & Sakura Bakushin O & Super Creek & Haru Urara & Matikanefukukitaru & Nice Nature & King Halo",
+    "type": "character",
+    "start": "2026-06-26T00:00:00Z",
+    "end": "2025-06-28T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "special_week_original",
+        "gtId": "100101"
+      },
+      {
+        "id": "silence_suzuka_original",
+        "gtId": "100201"
+      },
+      {
+        "id": "tokai_teio_original",
+        "gtId": "100301"
+      },
+      {
+        "id": "maruzensky_original",
+        "gtId": "100401"
+      },
+      {
+        "id": "oguri_cap_original",
+        "gtId": "100601"
+      },
+      {
+        "id": "gold_ship_original",
+        "gtId": "100701"
+      },
+      {
+        "id": "vodka_original",
+        "gtId": "100801"
+      },
+      {
+        "id": "daiwa_scarlet_original",
+        "gtId": "100901"
+      },
+      {
+        "id": "taiki_shuttle_original",
+        "gtId": "101001"
+      },
+      {
+        "id": "grass_wonder_original",
+        "gtId": "101101"
+      },
+      {
+        "id": "mejiro_mcqueen_original",
+        "gtId": "101301"
+      },
+      {
+        "id": "el_condor_pasa_original",
+        "gtId": "101401"
+      },
+      {
+        "id": "symboli_rudolf_original",
+        "gtId": "101701"
+      },
+      {
+        "id": "air_groove_original",
+        "gtId": "101801"
+      },
+      {
+        "id": "mayano_top_gun_original",
+        "gtId": "102401"
+      },
+      {
+        "id": "mejiro_ryan_original",
+        "gtId": "102701"
+      },
+      {
+        "id": "rice_shower_original",
+        "gtId": "103001"
+      },
+      {
+        "id": "agnes_tachyon_original",
+        "gtId": "103201"
+      },
+      {
+        "id": "winning_ticket_original",
+        "gtId": "103501"
+      },
+      {
+        "id": "sakura_bakushin_o_original",
+        "gtId": "104101"
+      },
+      {
+        "id": "super_creek_original",
+        "gtId": "104501"
+      },
+      {
+        "id": "haru_urara_original",
+        "gtId": "105201"
+      },
+      {
+        "id": "matikanefukukitaru_original",
+        "gtId": "105601"
+      },
+      {
+        "id": "nice_nature_original",
+        "gtId": "106001"
+      },
+      {
+        "id": "king_halo_original",
+        "gtId": "106101"
+      }
+    ]
+  },
+  {
     "bannerName": "Mejiro McQueen (Summer) & Gold Ship (Summer)",
     "type": "character",
     "start": "2026-06-23T00:00:00Z",
@@ -743,6 +1119,527 @@
       {
         "id": "seiun_sky_ballroom",
         "gtId": "102002"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mejiro Bright",
+    "type": "character",
+    "start": "2026-03-27T00:00:00Z",
+    "end": "2026-04-07T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "mejiro_bright_original",
+        "gtId": "107401"
+      }
+    ]
+  },
+  {
+    "bannerName": "Satono Diamond",
+    "type": "character",
+    "start": "2026-03-23T00:00:00Z",
+    "end": "2026-04-03T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "satono_diamond_original",
+        "gtId": "106701"
+      }
+    ]
+  },
+  {
+    "bannerName": "Matikanetannhauser & Kitasan Black",
+    "type": "character",
+    "start": "2026-03-13T00:00:00Z",
+    "end": "2026-03-24T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "matikanetannhauser_original",
+        "gtId": "106201"
+      },
+      {
+        "id": "kitasan_black_original",
+        "gtId": "106801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Admire Vega",
+    "type": "character",
+    "start": "2026-03-06T00:00:00Z",
+    "end": "2026-03-14T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "admire_vega_original",
+        "gtId": "103301"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mejiro Ardan",
+    "type": "character",
+    "start": "2026-02-26T00:00:00Z",
+    "end": "2026-03-06T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "mejiro_ardan_original",
+        "gtId": "107101"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mihono Bourbon (Valentine) & Eishin Flash (Valentine)",
+    "type": "character",
+    "start": "2026-02-19T00:00:00Z",
+    "end": "2026-03-02T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "mihono_bourbon_valentine",
+        "gtId": "102602"
+      },
+      {
+        "id": "eishin_flash_valentine",
+        "gtId": "103702"
+      }
+    ]
+  },
+  {
+    "bannerName": "Sakura Chiyono O",
+    "type": "character",
+    "start": "2026-02-12T00:00:00Z",
+    "end": "2026-02-20T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "sakura_chiyono_o_original",
+        "gtId": "106901"
+      }
+    ]
+  },
+  {
+    "bannerName": "TM Opera O (New Year) & Haru Urara (New Year)",
+    "type": "character",
+    "start": "2026-01-30T00:00:00Z",
+    "end": "2026-02-10T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "tm_opera_o_new_year",
+        "gtId": "101502"
+      },
+      {
+        "id": "haru_urara_new_year",
+        "gtId": "105202"
+      }
+    ]
+  },
+  {
+    "bannerName": "Tamamo Cross",
+    "type": "character",
+    "start": "2026-01-23T00:00:00Z",
+    "end": "2026-02-01T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "tamamo_cross_original",
+        "gtId": "102101"
+      }
+    ]
+  },
+  {
+    "bannerName": "Fine Motion",
+    "type": "character",
+    "start": "2026-01-16T00:00:00Z",
+    "end": "2026-01-24T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "fine_motion_original",
+        "gtId": "102201"
+      }
+    ]
+  },
+  {
+    "bannerName": "Oguri Cap (Christmas) & Biwa Hayahide (Christmas)",
+    "type": "character",
+    "start": "2026-01-06T00:00:00Z",
+    "end": "2026-01-21T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "oguri_cap_christmas",
+        "gtId": "100602"
+      },
+      {
+        "id": "biwa_hayahide_christmas",
+        "gtId": "102302"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mejiro Dober",
+    "type": "character",
+    "start": "2025-12-29T00:00:00Z",
+    "end": "2026-01-08T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "mejiro_dober_original",
+        "gtId": "105901"
+      }
+    ]
+  },
+  {
+    "bannerName": "Tosen Jordan",
+    "type": "character",
+    "start": "2025-12-19T00:00:00Z",
+    "end": "2025-12-30T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "tosen_jordan_original",
+        "gtId": "104801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Symboli Rudolf (Festival) & Gold City (Festival)",
+    "type": "character",
+    "start": "2025-12-15T00:00:00Z",
+    "end": "2025-12-26T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "symboli_rudolf_festival",
+        "gtId": "101702"
+      },
+      {
+        "id": "gold_city_festival",
+        "gtId": "104002"
+      }
+    ]
+  },
+  {
+    "bannerName": "Manhattan Cafe",
+    "type": "character",
+    "start": "2025-12-09T00:00:00Z",
+    "end": "2025-12-17T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "manhattan_cafe_original",
+        "gtId": "102501"
+      }
+    ]
+  },
+  {
+    "bannerName": "Kawakami Princess",
+    "type": "character",
+    "start": "2025-12-02T00:00:00Z",
+    "end": "2025-12-11T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "kawakami_princess_original",
+        "gtId": "103901"
+      }
+    ]
+  },
+  {
+    "bannerName": "Rice Shower (Halloween) & Super Creek (Halloween)",
+    "type": "character",
+    "start": "2025-11-25T00:00:00Z",
+    "end": "2025-12-07T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "rice_shower_halloween",
+        "gtId": "103002"
+      },
+      {
+        "id": "super_creek_halloween",
+        "gtId": "104502"
+      }
+    ]
+  },
+  {
+    "bannerName": "Agnes Digital",
+    "type": "character",
+    "start": "2025-11-20T00:00:00Z",
+    "end": "2025-11-29T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "agnes_digital_original",
+        "gtId": "101901"
+      }
+    ]
+  },
+  {
+    "bannerName": "Hishi Akebono",
+    "type": "character",
+    "start": "2025-11-12T00:00:00Z",
+    "end": "2025-11-22T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "hishi_akebono_original",
+        "gtId": "102801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Matikanefukukitaru (Full Armor)",
+    "type": "character",
+    "start": "2025-11-07T00:00:00Z",
+    "end": "2025-11-18T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "matikanefukukitaru_armor",
+        "gtId": "105602"
+      }
+    ]
+  },
+  {
+    "bannerName": "Eishin Flash",
+    "type": "character",
+    "start": "2025-10-31T00:00:00Z",
+    "end": "2025-11-10T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "eishin_flash_original",
+        "gtId": "103701"
+      }
+    ]
+  },
+  {
+    "bannerName": "Meisho Doto",
+    "type": "character",
+    "start": "2025-10-22T00:00:00Z",
+    "end": "2025-10-30T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "meisho_doto_original",
+        "gtId": "105801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Special Week (Summer) & Maruzensky (Summer)",
+    "type": "character",
+    "start": "2025-10-15T00:00:00Z",
+    "end": "2025-10-27T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "special_week_summer",
+        "gtId": "100102"
+      },
+      {
+        "id": "maruzensky_summer",
+        "gtId": "100402"
+      }
+    ]
+  },
+  {
+    "bannerName": "Gold City",
+    "type": "character",
+    "start": "2025-10-08T00:00:00Z",
+    "end": "2025-10-16T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "gold_city_original",
+        "gtId": "104001"
+      }
+    ]
+  },
+  {
+    "bannerName": "Fuji Kiseki",
+    "type": "character",
+    "start": "2025-10-03T00:00:00Z",
+    "end": "2025-10-10T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "fuji_kiseki_original",
+        "gtId": "100501"
+      }
+    ]
+  },
+  {
+    "bannerName": "Grass Wonder (Fantasy) & El Condor Pasa (Fantasy)",
+    "type": "character",
+    "start": "2025-09-22T00:00:00Z",
+    "end": "2025-10-04T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "grass_wonder_fantasy",
+        "gtId": "101102"
+      },
+      {
+        "id": "el_condor_pasa_fantasy",
+        "gtId": "101402"
+      }
+    ]
+  },
+  {
+    "bannerName": "Hishi Amazon",
+    "type": "character",
+    "start": "2025-09-18T00:00:00Z",
+    "end": "2025-09-25T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "hishi_amazon_original",
+        "gtId": "101201"
+      }
+    ]
+  },
+  {
+    "bannerName": "Seiun Sky",
+    "type": "character",
+    "start": "2025-09-08T00:00:00Z",
+    "end": "2025-09-18T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "seiun_sky_original",
+        "gtId": "102001"
+      }
+    ]
+  },
+  {
+    "bannerName": "Air Groove (Wedding) & Mayano Top Gun (Wedding)",
+    "type": "character",
+    "start": "2025-08-29T00:00:00Z",
+    "end": "2025-09-10T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "air_groove_wedding",
+        "gtId": "101802"
+      },
+      {
+        "id": "mayano_top_gun_wedding",
+        "gtId": "102402"
+      }
+    ]
+  },
+  {
+    "bannerName": "Narita Brian",
+    "type": "character",
+    "start": "2025-08-21T00:00:00Z",
+    "end": "2025-08-31T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "narita_brian_original",
+        "gtId": "101601"
+      }
+    ]
+  },
+  {
+    "bannerName": "Smart Falcon",
+    "type": "character",
+    "start": "2025-08-12T00:00:00Z",
+    "end": "2025-08-22T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "smart_falcon_original",
+        "gtId": "104601"
+      }
+    ]
+  },
+  {
+    "bannerName": "Narita Taishin",
+    "type": "character",
+    "start": "2025-08-04T00:00:00Z",
+    "end": "2025-08-13T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "narita_taishin_original",
+        "gtId": "105001"
+      }
+    ]
+  },
+  {
+    "bannerName": "Curren Chan",
+    "type": "character",
+    "start": "2025-07-28T00:00:00Z",
+    "end": "2025-08-07T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "curren_chan_original",
+        "gtId": "103801"
+      }
+    ]
+  },
+  {
+    "bannerName": "Tokai Teio (Anime Collab) & Mejiro McQueen (Anime Collab)",
+    "type": "character",
+    "start": "2025-07-17T00:00:00Z",
+    "end": "2025-08-01T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "tokai_teio_anime_collab",
+        "gtId": "100302"
+      },
+      {
+        "id": "mejiro_mcqueen_anime_collab",
+        "gtId": "101302"
+      }
+    ]
+  },
+  {
+    "bannerName": "Biwa Hayahide",
+    "type": "character",
+    "start": "2025-07-11T00:00:00Z",
+    "end": "2025-07-22T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "biwa_hayahide_original",
+        "gtId": "102301"
+      }
+    ]
+  },
+  {
+    "bannerName": "Mihono Bourbon",
+    "type": "character",
+    "start": "2025-07-03T00:00:00Z",
+    "end": "2025-07-11T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "mihono_bourbon_original",
+        "gtId": "102601"
+      }
+    ]
+  },
+  {
+    "bannerName": "TM Opera O",
+    "type": "character",
+    "start": "2025-06-28T00:00:00Z",
+    "end": "2025-07-04T23:59:59Z",
+    "isOfficial": true,
+    "featured": [
+      {
+        "id": "tm_opera_o_original",
+        "gtId": "101501"
       }
     ]
   }
