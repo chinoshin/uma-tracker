@@ -1097,12 +1097,12 @@
 
     ${ rerunHTML } 
 
-    ${(status !== 'released' && target !== 'TBA') ? `
-        <div class="timer-overlay">
-            <span class="countdown-timer" data-date="${target}" data-status="${status}">--:--:--</span>
-        </div>
-    ` : ''
-                }
+${(status !== 'released' && target !== 'TBA') ? `
+    <div class="timer-overlay">
+        <span class="timer-label">${status === 'live' ? 'Ends in:' : 'Starts in:'}</span>
+        <span class="countdown-timer" data-date="${target}" data-status="${status}">--:--:--</span>
+    </div>
+` : ''}
 
     ${ currentTab === 'timeline' ? `<span class="status-badge badge-${status}">${status === 'live' ? '🔴 Live' : status === 'upcoming' ? '⏳ Upcoming' : '✓ Released'}</span>` : '' }
 </div >
